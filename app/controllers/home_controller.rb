@@ -4,4 +4,12 @@ class HomeController < ApplicationController
   def index
     @messages = Message.all
   end
+
+  def provider
+    @response = Hash.new
+
+    # Needs code to set up response for new messages.
+
+    render :json => @response
+  end
 end

@@ -2,6 +2,7 @@ Ignis::Application.routes.draw do
   devise_for :users
 
   resources :message, :only => [:create, :show, :update, :destroy]
+  match 'poll' => "home#provider"
 
   root :to => "home#index"
 
