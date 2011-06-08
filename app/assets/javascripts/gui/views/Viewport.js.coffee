@@ -1,11 +1,18 @@
+logout = -> window.location = link.logout
+editRegistration = -> window.location = link.editReg
+
 center =
   xtype: 'chat.panel'
   region: 'center'
+  tbar: [
+    { text: 'Logoff', handler: logout },
+    { text: 'Your Profile', handler: editRegistration }
+  ]
 
 south =
   xtype: 'chat.inputpanel'
   region: 'south'
-  height: 100
+
 
 
 Ext.define 'ignis.view.Viewport'

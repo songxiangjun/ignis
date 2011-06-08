@@ -59,10 +59,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html.haml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.html.haml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/home/index.html.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="25" selection-start="216" selection-end="216" vertical-scroll-proportion="0.0">
+            <state line="23" column="0" selection-start="462" selection-end="462" vertical-scroll-proportion="0.40469208">
               <folding />
             </state>
           </provider>
@@ -71,7 +71,7 @@
       <file leaf-file-name="Viewport.js.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/gui/views/Viewport.js.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="25" selection-start="84" selection-end="84" vertical-scroll-proportion="0.0">
+            <state line="8" column="54" selection-start="251" selection-end="251" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -86,10 +86,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChatInputPanel.js.coffee" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ChatInputPanel.js.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/gui/views/ChatInputPanel.js.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="27" selection-start="281" selection-end="281" vertical-scroll-proportion="0.19354838">
+            <state line="14" column="25" selection-start="362" selection-end="362" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -139,10 +139,10 @@
         <option value="$PROJECT_DIR$/app/views/devise/confirmations/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/devise/registrations/new.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/home.css.scss" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/gui/views/Viewport.js.coffee" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/gui/views/ChatContentPanel.js.coffee" />
-        <option value="$PROJECT_DIR$/app/views/home/index.html.haml" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/gui/views/ChatInputPanel.js.coffee" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/gui/views/Viewport.js.coffee" />
+        <option value="$PROJECT_DIR$/app/views/home/index.html.haml" />
       </list>
     </option>
   </component>
@@ -805,16 +805,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/home/index.html.haml">
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/gui/views/ChatInputPanel.js.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="25" selection-start="216" selection-end="216" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/gui/views/Viewport.js.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="25" selection-start="84" selection-end="84" vertical-scroll-proportion="0.0">
+        <state line="14" column="25" selection-start="362" selection-end="362" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -826,9 +819,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/gui/views/ChatInputPanel.js.coffee">
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/gui/views/Viewport.js.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="27" selection-start="281" selection-end="281" vertical-scroll-proportion="0.19354838">
+        <state line="8" column="54" selection-start="251" selection-end="251" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/home/index.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="0" selection-start="462" selection-end="462" vertical-scroll-proportion="0.40469208">
           <folding />
         </state>
       </provider>

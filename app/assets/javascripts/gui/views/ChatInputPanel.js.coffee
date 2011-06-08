@@ -3,14 +3,14 @@ Ext.define 'ignis.view.ChatInputPanel'
   alias  : 'widget.chat.inputpanel'
   layout : 'anchor'
   defaultType: 'textfield'
-  default:
+  defaults:
     anchor: '100%'
   #contentEl : 'maininput'
   bodyPadding: 5
   url: '/message'
   items: [
-    { fieldLabel: 'Message', name: 'content', allowBlank: false }
+    { emptyText: 'Message', name: 'content', allowBlank: false }
   ]
   buttons: [
-    { text: 'Submit', formBind: true, handler: Ext.emptyFn }
+    { text: 'Send Message', formBind: true, handler: Ext.emptyFn }
   ]

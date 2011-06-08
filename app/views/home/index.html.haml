@@ -11,12 +11,17 @@
       }
     });
 
+    var link = {
+      editReg: "#{edit_user_registration_path}",
+      logout: "#{destroy_user_session_path}"
+    };
+
 #main
 
-  %table
-    %tr
-      %td= link_to "Edit your profile", edit_user_registration_path
-      %td= link_to "Logout!", destroy_user_session_path
+  -#%table
+  -#  %tr
+  -#    %td= link_to "Edit your profile", edit_user_registration_path
+  -#    %td= link_to "Logout!", destroy_user_session_path
 
   %table.messages
     - @messages.each do |message|
