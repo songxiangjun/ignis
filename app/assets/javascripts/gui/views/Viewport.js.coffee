@@ -1,12 +1,20 @@
 logout = -> window.location = link.logout
 editRegistration = -> window.location = link.editReg
 
+
 center =
   xtype: 'chat.panel'
   region: 'center'
   tbar: [
-    { text: 'Logoff', handler: logout },
-    { text: 'Your Profile', handler: editRegistration }
+    {
+      text: 'Your Profile'
+      handler: editRegistration
+    }
+    '->'
+    {
+      text: 'Logoff'
+      handler: logout
+    }
   ]
 
 south =

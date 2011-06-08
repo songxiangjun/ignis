@@ -1,5 +1,6 @@
+
 Ext.define 'ignis.view.ChatInputPanel'
-  extend : 'Ext.panel.Panel'
+  extend : 'Ext.form.Panel'
   alias  : 'widget.chat.inputpanel'
   layout : 'anchor'
   defaultType: 'textfield'
