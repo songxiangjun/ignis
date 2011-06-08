@@ -1,3 +1,6 @@
+<%= render :partial => "devise/shared/above" %>
+
+<div id="auth">
 <h2>Sign up</h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
@@ -5,11 +8,12 @@
 
   <table>
     <tr><td><%= f.label :username %></td><td><%= f.text_field :username %></td></tr>
-    <tr><td><%= f.label :email %> (will be used to log in)</td><td><%= f.email_field :email %></td></tr>
+    <tr><td><%= f.label :email %></td><td><%= f.email_field :email %></td><td>(will be used to log in)</td></tr>
     <tr><td><%= f.label :password %></td><td><%= f.password_field :password %></td></tr>
     <tr><td><%= f.label :password_confirmation %></td><td><%= f.password_field :password_confirmation %></td></tr>
     <tr><td></td><td><%= f.submit "Sign up" %><br /><br /><%= render :partial => "devise/shared/links" %></td></tr>
   </table>
 <% end %>
+</div>
 
 

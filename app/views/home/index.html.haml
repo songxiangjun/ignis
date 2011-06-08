@@ -1,23 +1,35 @@
-:javascript
-  Ext.onReady(function() {
-    Ext.Msg.alert("status", "on");
-  });
+- content_for :head do
+  :javascript
+    Ext.application({
+      name: 'ignis',
+      appFolder: 'gui',
+      controllers: [],
+      launch: function() {
+        Ext.create('widget.ignis', {
+          applyTo: 'body'
+        })
+      }
+    });
 
-%table
-  %tr
-    %td= link_to "Edit your profile", edit_user_registration_path
-    %td= link_to "Logout!", destroy_user_session_path
+#main
 
-%table.messages
-  - @messages.each do |message|
-    %tr
-      %td.rightpadding.name= message.author
-      %td.time= message.created_at.strftime "%y/%m/%d %H:%M %Z"
-      %td.message= message.content
-
-= form_for :message, :url => message_index_path do |f|
   %table
     %tr
-      %td= f.text_field :content
-      %td= f.submit "Send Message"
+      %td= link_to "Edit your profile", edit_user_registration_path
+      %td= link_to "Logout!", destroy_user_session_path
+
+  %table.messages
+    - @messages.each do |message|
+      %tr
+        %td.rightpadding.name= message.author
+        %td.time= message.created_at.strftime "%y/%m/%d %H:%M %Z"
+        %td.message= message.content
+
+#maininput
+
+  = form_for :message, :url => message_index_path do |f|
+    %table
+      %tr
+        %td= f.text_field :content
+        %td= f.submit "Send Message"
 
