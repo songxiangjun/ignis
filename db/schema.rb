@@ -10,25 +10,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110613122611) do
+ActiveRecord::Schema.define(:version => 20110613224925) do
+
+  create_table "feeds", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "messages", :force => true do |t|
     t.string   "content"
     t.string   "author"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "room_id",    :default => 0
+    t.integer  "feed_id"
   end
 
-  add_index "messages", ["room_id"], :name => "index_messages_on_room_id"
-
-  create_table "rooms", :force => true do |t|
-    t.string   "name"
-    t.string   "description"
-    t.integer  "room_owner"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+  add_index "messages", ["feed_id"], :name => "index_messages_on_feed_id"
 
   create_table "users", :force => true do |t|
     t.string   "username"

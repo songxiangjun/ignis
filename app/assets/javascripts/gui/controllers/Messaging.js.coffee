@@ -13,6 +13,7 @@ Ext.define 'ignis.controller.Messaging',
           'message[content]': f.value
         success: ->
           window.pollFn()
-      f.reset()
+        callback: ->
+          f.reset()
     if e.getKey() is e.ESC
       f.reset()
