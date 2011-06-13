@@ -4,6 +4,19 @@ profileButton =
   icon    : '/assets/16x16/user.png'
   handler : editRegistration
   
+getHistory = ->
+  Ext.Msg.alert 'Status', 'Not ready yet.'
+historyButton =
+  text    : 'History'
+  icon    : '/assets/16x16/clock.png'
+  handler : getHistory
+  disabled: true
+  
+search = 
+  xtype   : 'searchfield'
+  id      : 'primarysearch'
+  disabled: true
+  
 logout = -> window.location = link.logout
 logoutButton = 
   text    : 'Logoff'
@@ -26,6 +39,6 @@ Ext.define 'ignis.view.Viewport'
   items  :
     xtype  : 'panel'
     layout : 'border'
-    tbar: [ profileButton, '->', logoutButton ]
+    tbar: [ profileButton, historyButton, '->', search, logoutButton ]
     #bbar: ['Status: ']
     items  : [ center, south ]

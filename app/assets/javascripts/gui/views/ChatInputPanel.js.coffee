@@ -1,21 +1,14 @@
-#sendButton =
-#  xtype: 'button'
-#  text: 'Send Message'
-#  anchor: '96%'
-#  id: 'msgBtn'
-#
-#buttonColumn =
-#  columnWidth: .1
-#  layout: 'anchor'
-#  items: [ sendButton ]
+
 
 messageField =
-  xtype     : 'textfield'
-  emptyText : 'Type a message and hit enter to send...'
-  name      : 'content'
-  anchor    : '100%'
-  id        : 'msgfield'
-  tabIndex  : 1
+  xtype          : 'textareafield'
+  emptyText      : 'Type a message and hit enter to send...'
+  name           : 'content'
+  anchor         : '100%'
+  height         : 40
+  id             : 'msgfield'
+  tabIndex       : 1
+  enterIsSpecial : true
 
 messageColumn =
   columnWidth : 1
@@ -29,7 +22,7 @@ Ext.define 'ignis.view.ChatInputPanel'
   border      : false
   bodyPadding : 5
   url         : '/message'
-  height      : 32
+  height      : 52
   defaults    :
     border      : false
   items       : [ messageColumn ]
