@@ -19,7 +19,7 @@ responseFn = (response) ->
   el = Ext.getCmp 'messagePanel'
   if json.html isnt undefined
     el.update json
-  el.body.scroll 'b', 100000, false
+    el.body.scroll 'b', 100000, false
   window.recentTime = json.time
 
 setTimerFn = ->

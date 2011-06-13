@@ -68,10 +68,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home_controller.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="home_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/home_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="36" selection-start="473" selection-end="473" vertical-scroll-proportion="0.38066465">
+            <state line="21" column="36" selection-start="473" selection-end="473" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -131,10 +131,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ajax.js.coffee" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="ajax.js.coffee" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/ajax.js.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="74" selection-start="893" selection-end="893" vertical-scroll-proportion="0.0">
+            <state line="21" column="4" selection-start="537" selection-end="537" vertical-scroll-proportion="0.38066465">
               <folding />
             </state>
           </provider>
@@ -175,10 +175,10 @@
         <option value="$PROJECT_DIR$/app/assets/javascripts/gui/views/ChatContentPanel.js.coffee" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/message.css.scss" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/gui/controllers/Messaging.js.coffee" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/ajax.js.coffee" />
         <option value="$PROJECT_DIR$/app/controllers/message_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/home_controller.rb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/ajax.js.coffee" />
       </list>
     </option>
   </component>
@@ -869,6 +869,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/message.css.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="46" selection-start="101" selection-end="101" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/home/index.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="16" selection-start="267" selection-end="267" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/home_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="36" selection-start="473" selection-end="473" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/message_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="16" selection-start="251" selection-end="251" vertical-scroll-proportion="0.0">
@@ -913,28 +934,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/ajax.js.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="74" selection-start="893" selection-end="893" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/message.css.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="46" selection-start="101" selection-end="101" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/home/index.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="16" selection-start="267" selection-end="267" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/home_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="36" selection-start="473" selection-end="473" vertical-scroll-proportion="0.38066465">
+        <state line="21" column="4" selection-start="537" selection-end="537" vertical-scroll-proportion="0.38066465">
           <folding />
         </state>
       </provider>
