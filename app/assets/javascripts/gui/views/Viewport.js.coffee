@@ -13,7 +13,7 @@ logoutButton =
 center =
   xtype  : 'chat.panel'
   region : 'center'
-  id     : 'messages'
+  id     : 'messagePanel'
 
 south =
   xtype  : 'chat.inputpanel'

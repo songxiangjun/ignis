@@ -6,14 +6,21 @@ class HomeController < ApplicationController
   end
 
   def provider
-    @messages = Message.all
-
     @response = Hash.new
-    @response[:html] = render_to_string :partial => "messages"
+
+    if params[:time]
+      @time = Time.at params[:time].to_f
+    else
+      @time = Time.now - 1.day
+    end
+
+    @messages = Message.where "created_at > ?", @time
+    if @messages.length > 0
+      @response[:html] = render_to_string :partial => "messages"
+    end
+
+    @response[:time] = Time.now.to_f
 
     render :json => @response
-    # Needs code to set up response for new messages.
-
-#    render :json => @response
   end
 end

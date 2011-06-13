@@ -1,6 +1,6 @@
 
-div.messages { padding: 10px 20px; width: 100%; }
-.singleMessage { margin: 1px 0; padding: 0 10px; }
-.singleMessage.me { background: #dddddd; }
+/*div.messages { padding: 10px 20px; width: 100%; }*/
+div.messages .singleMessage { margin: 1px 10px; padding: 0 10px; }
+div.messages .singleMessage.me { background: #dddddd; }
 div.messages .time { font-size: xx-small; }
 

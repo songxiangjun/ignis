@@ -5,16 +5,15 @@
 -#      %td.time= message.created_at.strftime "%y/%m/%d %H:%M %Z"
 -#      %td.message= message.content
 
-.messages
-  - @messages.each do |msg|
-    - if current_user.username == msg.author
-      .singleMessage.me
-        %span.name= msg.author
-        %span.time= "(" + msg.created_at.strftime("%y/%m/%d %H:%M %Z")+ "):"
-        %span.message= msg.content
-    - else
-      .singleMessage
-        %span.name= msg.author
-        %span.time= "(" + msg.created_at.strftime("%y/%m/%d %H:%M %Z")+ "):"
-        %span.message= msg.content
+- @messages.each do |msg|
+  - if current_user.username == msg.author
+    .singleMessage.me
+      %span.name= msg.author
+      %span.time= "(" + msg.created_at.strftime("%y/%m/%d %H:%M %Z")+ "):"
+      %span.message= msg.content
+  - else
+    .singleMessage
+      %span.name= msg.author
+      %span.time= "(" + msg.created_at.strftime("%y/%m/%d %H:%M %Z")+ "):"
+      %span.message= msg.content
 

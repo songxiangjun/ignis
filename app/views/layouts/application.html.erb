@@ -3,7 +3,7 @@
 <head>
   <title>Ignis</title>
   <script type="text/javascript">
-    window.recentTime = "<%= Time.new %>";
+    window.recentTime = "<%= (Time.now - 1.day).to_f %>";
   </script>
 
   <%= stylesheet_link_tag    "application" %>
