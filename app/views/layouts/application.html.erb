@@ -2,6 +2,10 @@
 <html>
 <head>
   <title>Ignis</title>
+  <script type="text/javascript">
+    window.recentTime = "<%= Time.new %>";
+  </script>
+
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= yield :head %>

@@ -13,7 +13,7 @@ logoutButton =
 center =
   xtype: 'chat.panel'
   region: 'center'
-  tbar: [ profileButton, '->', logoutButton ]
+  id: 'messages'
 
 south =
   xtype: 'chat.inputpanel'
@@ -26,4 +26,6 @@ Ext.define 'ignis.view.Viewport'
   items  :
     xtype  : 'panel'
     layout : 'border'
+    tbar: [ profileButton, '->', logoutButton ]
+    #bbar: ['Status: ']
     items  : [ center, south ]

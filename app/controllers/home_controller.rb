@@ -7,9 +7,12 @@ class HomeController < ApplicationController
 
   def provider
     @response = Hash.new
+    @messages = Message.all
 
+
+    render :partial => "messages"
     # Needs code to set up response for new messages.
 
-    render :json => @response
+#    render :json => @response
   end
 end

@@ -1,23 +1,23 @@
-sendButton = 
-  xtype: 'button'
-  text: 'Send Message'
-  handler: Ext.emptyFn
-  anchor: '96%'
-  
-buttonColumn = 
-  columnWidth: .1
-  layout: 'anchor'
-  items: [ sendButton ]
+#sendButton =
+#  xtype: 'button'
+#  text: 'Send Message'
+#  anchor: '96%'
+#  id: 'msgBtn'
+#
+#buttonColumn =
+#  columnWidth: .1
+#  layout: 'anchor'
+#  items: [ sendButton ]
 
-messageField = 
+messageField =
   xtype: 'textfield'
-  emptyText: 'Message'
+  emptyText: 'Type a message...'
   name: 'content'
-  allowBlank: false
-  anchor: '98%'
-  
-messageColumn = 
-  columnWidth: .9
+  anchor: '100%'
+  id: 'msgfield'
+
+messageColumn =
+  columnWidth: 1
   layout: 'anchor'
   items: [ messageField ]
 
@@ -31,4 +31,4 @@ Ext.define 'ignis.view.ChatInputPanel'
   height      : 32
   defaults    :
     border      : false
-  items       : [ messageColumn, buttonColumn ]
+  items       : [ messageColumn ]

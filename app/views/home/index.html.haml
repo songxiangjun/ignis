@@ -3,7 +3,7 @@
     Ext.application({
       name: 'ignis',
       appFolder: 'gui',
-      controllers: [],
+      controllers: ['Messaging'],
       launch: function() {
         Ext.create('widget.ignis', {
           applyTo: 'body'
@@ -13,10 +13,10 @@
 
     var link = {
       editReg: "#{edit_user_registration_path}",
-      logout: "#{destroy_user_session_path}"
-    };
+      logout: "#{destroy_user_session_path}",
 
-    var latestUpdateTime = "#{Time.new - 1.day}";
+      sendMsg: "#{message_index_path}"
+    };
 
 #main
 
@@ -25,12 +25,12 @@
   -#    %td= link_to "Edit your profile", edit_user_registration_path
   -#    %td= link_to "Logout!", destroy_user_session_path
 
-  %table.messages
-    - @messages.each do |message|
-      %tr
-        %td.rightpadding.name= message.author
-        %td.time= message.created_at.strftime "%y/%m/%d %H:%M %Z"
-        %td.message= message.content
+  -#%table.messages
+  -#  - @messages.each do |message|
+  -#    %tr
+  -#      %td.rightpadding.name= message.author
+  -#      %td.time= message.created_at.strftime "%y/%m/%d %H:%M %Z"
+  -#      %td.message= message.content
 
 #maininput
 
