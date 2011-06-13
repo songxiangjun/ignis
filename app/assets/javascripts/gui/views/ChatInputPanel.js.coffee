@@ -11,10 +11,11 @@
 
 messageField =
   xtype     : 'textfield'
-  emptyText : 'Type a message...'
+  emptyText : 'Type a message and hit enter to send...'
   name      : 'content'
   anchor    : '100%'
   id        : 'msgfield'
+  tabIndex  : 1
 
 messageColumn =
   columnWidth : 1

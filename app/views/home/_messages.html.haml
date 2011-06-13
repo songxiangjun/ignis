@@ -11,9 +11,11 @@
       %span.name= msg.author
       %span.time= "(" + msg.created_at.strftime("%y/%m/%d %H:%M %Z")+ "):"
       %span.message= msg.content
+
   - else
     .singleMessage
       %span.name= msg.author
       %span.time= "(" + msg.created_at.strftime("%y/%m/%d %H:%M %Z")+ "):"
       %span.message= msg.content
+
 

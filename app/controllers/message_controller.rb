@@ -10,7 +10,7 @@ class MessageController < ApplicationController
     @m.author = current_user.username
 
     if @m.save
-      head :ok #redirect_to :controller => 'home', :action => 'index'
+      head :ok
     end
   end
 

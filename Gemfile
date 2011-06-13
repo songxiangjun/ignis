@@ -13,6 +13,7 @@ gem 'sass'
 gem 'coffee-script'
 gem 'uglifier'
 gem 'devise'
+gem 'RedCloth'
 
 #gem 'jquery-rails'
 
