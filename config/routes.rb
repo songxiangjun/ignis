@@ -1,6 +1,11 @@
 Ignis::Application.routes.draw do
   devise_for :users
 
+  # for the near future....
+#  resources :room, :only => [:create, :show, :update, :destroy ] do
+#    resources :message, :only => [:create, :show, :update, :destroy]
+#  end
+
   resources :message, :only => [:create, :show, :update, :destroy]
   match 'poll' => "home#provider"
 

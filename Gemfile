@@ -17,8 +17,8 @@ gem 'RedCloth'
 
 #gem 'jquery-rails'
 
-# Use unicorn as the web server
 # gem 'unicorn'
+gem 'thin'
 
 # Deploy with Capistrano
 # gem 'capistrano'

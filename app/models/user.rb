@@ -9,4 +9,5 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :username
 
   has_many :messages
+  has_many :rooms, :dependent => :nullify, :foreign_key => "room_owner"
 end
