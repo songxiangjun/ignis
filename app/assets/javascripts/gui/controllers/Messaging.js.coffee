@@ -1,6 +1,6 @@
 Ext.define 'ignis.controller.Messaging',
-  extend: 'Ext.app.Controller'
-  init: ->
+  extend : 'Ext.app.Controller'
+  init   : ->
     console.log 'Initializing messaging controller...'
     this.control
       '#msgfield':
@@ -12,7 +12,7 @@ Ext.define 'ignis.controller.Messaging',
         params:
           'message[content]': f.value
         success: ->
-          console.log 'succ'
+          window.pollFn()
       f.reset()
     if e.getKey() is e.ESC
       f.reset()

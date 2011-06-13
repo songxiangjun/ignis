@@ -6,11 +6,12 @@ class HomeController < ApplicationController
   end
 
   def provider
-    @response = Hash.new
     @messages = Message.all
 
+    @response = Hash.new
+    @response[:html] = render_to_string :partial => "messages"
 
-    render :partial => "messages"
+    render :json => @response
     # Needs code to set up response for new messages.
 
 #    render :json => @response

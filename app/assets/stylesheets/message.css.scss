@@ -1,5 +1,6 @@
-/* 
-  Place all the styles related to the matching controller here.
-  They will automatically be included in application.css.
-  You can use Sass (SCSS) here: http://sass-lang.com/
-*/
+
+div.messages { padding: 10px 20px; width: 100%; }
+.singleMessage { margin: 1px 0; padding: 0 10px; }
+.singleMessage.me { background: #dddddd; }
+div.messages .time { font-size: xx-small; }
+

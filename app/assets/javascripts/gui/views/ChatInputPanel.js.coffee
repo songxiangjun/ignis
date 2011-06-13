@@ -10,16 +10,16 @@
 #  items: [ sendButton ]
 
 messageField =
-  xtype: 'textfield'
-  emptyText: 'Type a message...'
-  name: 'content'
-  anchor: '100%'
-  id: 'msgfield'
+  xtype     : 'textfield'
+  emptyText : 'Type a message...'
+  name      : 'content'
+  anchor    : '100%'
+  id        : 'msgfield'
 
 messageColumn =
-  columnWidth: 1
-  layout: 'anchor'
-  items: [ messageField ]
+  columnWidth : 1
+  layout      : 'anchor'
+  items       : [ messageField ]
 
 Ext.define 'ignis.view.ChatInputPanel'
   extend      : 'Ext.form.Panel'
