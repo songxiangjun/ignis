@@ -52,4 +52,5 @@ Ext.define 'ignis.view.Viewport'
       xtype       : 'tabpanel'
       tabPosition : 'bottom'
       layout      : 'fit'
+      id          : 'chatpad'
       items       : genChat

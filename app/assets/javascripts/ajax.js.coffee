@@ -34,15 +34,21 @@ class PollingCommunicator
     @timer = setTimeout @ns + ".doPoll()", @interval 
     
   doPoll: ->
+    rooms = window.rc.getRoomIDs()
+
     if @timer isnt null
       clearTimeout @timer
-    Ext.Ajax.request 
-      scope: this
-      url: @pollUri
-      params:
-        time: window.recentTime
-        rooms: window.rc.getRoomIDs()
-      success: @self.successCallback
-      callback: @self.setTimer
+
+    if rooms.length > 0
+      Ext.Ajax.request 
+        scope    : this
+        url      : @pollUri
+        success  : @self.successCallback
+        callback : @self.setTimer
+        params   :
+          time     : window.recentTime
+          rooms    : rooms
+    else
+      @self.setTimer()
 
 window.poller = new PollingCommunicator 'window.poller'
