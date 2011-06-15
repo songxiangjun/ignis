@@ -1,4 +1,3 @@
-
 class RoomController
   constructor: ->
     @roomlist = {} # Each entry should be a hash of { id: name }
@@ -7,7 +6,7 @@ class RoomController
     
   getRoomEl: (room) -> Ext.ComponentQuery.query('panel[room='+room+'] > chatpanel')[0]
   getTabEl: (room) -> Ext.ComponentQuery.query('panel[room='+room+']')[0]
-
+  getActiveRoom: -> Ext.getCmp(@chatpad).getActiveTab().room
   getRoomIDs: ->
     ids = for id, tabId of @roomlist
       id    
@@ -22,17 +21,15 @@ class RoomController
     
   createTab: (id, name, closable) ->
     Ext.create 'Ext.panel.Panel', 
-      title  : name
-      layout : 'border'
-      room   : id
+      title    : name
+      layout   : 'border'
+      room     : id
       closable : closable
-      items  : [ 
-        { xtype  : 'chatpanel', region: 'center' }, 
-        {
-          region : 'south'
-          xtype  : 'chat.inputpanel'
-          items  : [ { xtype: 'msgfield' }, { xtype: 'msgroomfield', value: id } ]
-        }
+      items    : [ 
+        { region: 'center', xtype: 'chatpanel' }
+        { region: 'south',  xtype: 'chat.inputpanel', items: [ 
+          { xtype: 'msgfield' }, { xtype: 'msgroomfield', value: id } 
+        ]}
       ]
       
   roomExist: (id) ->
@@ -62,5 +59,4 @@ class RoomController
 
         window.poller.doPoll()
 
-    
 window.rc = new RoomController
