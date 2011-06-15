@@ -5,7 +5,7 @@
 -#      %td.time= message.created_at.strftime "%y/%m/%d %H:%M %Z"
 -#      %td.message= message.content
 
-- @messages.each do |msg|
+- messages.each do |msg|
   - if current_user.username == msg.author
     .singleMessage.me
       %span.name= msg.author

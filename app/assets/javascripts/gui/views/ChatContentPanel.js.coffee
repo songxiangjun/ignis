@@ -1,9 +1,7 @@
 Ext.define 'ignis.view.ChatContentPanel'
   extend       : 'Ext.panel.Panel'
-  alias        : 'widget.chat.panel'
+  alias        : 'widget.chatpanel'
   layout       : 'fit'
   autoScroll   : true
-  tpl          : '{html}'
-  tplWriteMode : 'append'
   cls          : 'messages'
 

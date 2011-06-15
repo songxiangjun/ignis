@@ -25,20 +25,6 @@ logoutButton =
   icon    : '/assets/16x16/process.png'
   handler : -> window.location = link.logout
 
-# Will use Ext.ComponentQuery.query('panel[room=0]') to retrieve.
-genChat = 
-  title  : 'General Chat'
-  layout : 'border'
-  room   : 0 
-  items  : [ 
-    { xtype  : 'chat.panel', region: 'center', id: 'messagePanel' }, 
-    {
-      region : 'south'
-      xtype  : 'chat.inputpanel'
-      items  : [ { xtype: 'msgfield' }, { xtype: 'msgroomfield', value: '0' } ]
-    }
-  ]
-
 Ext.define 'ignis.view.Viewport'
   extend : 'Ext.container.Viewport'
   alias  : 'widget.ignis'
@@ -53,4 +39,4 @@ Ext.define 'ignis.view.Viewport'
       tabPosition : 'bottom'
       layout      : 'fit'
       id          : 'chatpad'
-      items       : genChat
+      items       : []

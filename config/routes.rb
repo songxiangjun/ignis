@@ -9,6 +9,7 @@ Ignis::Application.routes.draw do
   resources :message, :only => [:create, :show, :update, :destroy]
   resources :room,    :only => [:create, :show, :update, :destroy]
   match 'poll' => "home#provider"
+  match 'history' => "home#history"
 
   root :to => "home#index"
 

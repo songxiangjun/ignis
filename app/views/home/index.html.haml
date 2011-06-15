@@ -5,10 +5,10 @@
       appFolder   : 'gui',
       controllers : ['Messaging'],
       launch      : function() {
-        Ext.create('widget.ignis', {
+        Ext.widget('ignis', {
           applyTo   : 'body'
-        })
-        window.poller.doPoll();
+        });
+        window.rc.joinRoom(0, 'General Chat');
       }
     });
 

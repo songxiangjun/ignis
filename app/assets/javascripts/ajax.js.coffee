@@ -24,10 +24,11 @@ class PollingCommunicator
     
   successCallback: (response) ->
     json = Ext.JSON.decode response.responseText
-    el = Ext.getCmp 'messagePanel'
-    if json.html isnt undefined
-      el.update json
-      el.body.scroll 'b', 100000, false
+
+    if json.messages isnt undefined
+      for room, messages of json.messages
+        window.rc.displayMessages room, messages
+
     window.recentTime = json.time
     
   setTimer: ->
@@ -46,9 +47,10 @@ class PollingCommunicator
         success  : @self.successCallback
         callback : @self.setTimer
         params   :
-          time     : window.recentTime
-          rooms    : rooms
+          'time'    : window.recentTime
+          'rooms[]' : rooms
     else
       @self.setTimer()
+
 
 window.poller = new PollingCommunicator 'window.poller'
