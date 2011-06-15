@@ -5,22 +5,29 @@ class RoomController
     @chatpad = 'chatpad'
     @historyUri = '/history'
     
+  getRoomEl: (room) -> Ext.ComponentQuery.query('panel[room='+room+'] > chatpanel')[0]
+  getTabEl: (room) -> Ext.ComponentQuery.query('panel[room='+room+']')[0]
+
   getRoomIDs: ->
     ids = for id, tabId of @roomlist
       id    
   displayMessages: (room, html) ->
-    el = Ext.ComponentQuery.query('panel[room='+room+'] > chatpanel')[0]
-    console.log el
+    el = this.getRoomEl(room)
     el.body.insertHtml "beforeEnd", html
     el.body.scroll 'b', 100000, false
+  setActiveRoom: (id) ->
+    pad = Ext.getCmp @chatpad
+    tab = this.getTabEl id
+    pad.setActiveTab tab
     
-  createTab: (id, name) ->
-    tabConfiguration = 
+  createTab: (id, name, closable) ->
+    Ext.create 'Ext.panel.Panel', 
       title  : name
       layout : 'border'
       room   : id
+      closable : closable
       items  : [ 
-        { xtype  : 'chatpanel', region: 'center', id: 'mtest' }, 
+        { xtype  : 'chatpanel', region: 'center' }, 
         {
           region : 'south'
           xtype  : 'chat.inputpanel'
@@ -28,9 +35,18 @@ class RoomController
         }
       ]
       
-  joinRoom: (id, name) ->
-    Ext.getCmp(@chatpad).add(this.createTab(id, name))
-    this.getRoomHistory()
+  roomExist: (id) ->
+    if this.getRoomEl(id) isnt undefined
+      true
+    else
+      false
+    
+  joinRoom: (id, name, closable) ->
+    pad = Ext.getCmp @chatpad
+    tab = this.createTab id, name, closable
+    pad.add tab
+    pad.setActiveTab tab
+    this.getRoomHistory id
     @roomlist[id] = name
     
   getRoomHistory: (room) ->
@@ -41,10 +57,8 @@ class RoomController
         'rooms[]' : room
       success  : (response) ->
         json = Ext.JSON.decode response.responseText
-
         if json.messages isnt undefined
-          for room, messages of json.messages
-            window.rc.displayMessages room, messages
+          window.rc.displayMessages room, json.messages[room]
 
         window.poller.doPoll()
 

@@ -7,6 +7,7 @@ class MessageController < ApplicationController
   def create
     @m = Message.new
     @m.content = params[:message][:content]
+    @m.room_id = params[:message][:room_id]
     @m.author = current_user.username
 
     if @m.save

@@ -1,8 +1,7 @@
 roomButton =
   text    : 'Rooms'
-  icon    : '/assets/16x16/window_add.png'
-  disabled: true
-  handler : -> Ext.Msg.alert 'Status', 'In progress'
+  icon    : '/assets/16x16/comments.png'
+  handler : -> Ext.widget 'roompicker'
 
 historyButton =
   text    : 'History'
