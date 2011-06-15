@@ -23,6 +23,10 @@ logoutButton =
   text    : 'Logoff'
   icon    : '/assets/16x16/process.png'
   handler : -> window.location = link.logout
+  
+changeTabFn = (tp, newpanel, oldpanel) -> 
+  newpanel.setIconCls ''
+  newpanel.setIconCls ''  # Yes, this needs to be here. For some reason Ext doesn't do it right without it.
 
 Ext.define 'ignis.view.Viewport'
   extend : 'Ext.container.Viewport'
@@ -39,3 +43,7 @@ Ext.define 'ignis.view.Viewport'
       layout      : 'fit'
       id          : 'chatpad'
       items       : []
+      listeners   :
+        tabchange   : changeTabFn
+      
+      
