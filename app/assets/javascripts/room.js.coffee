@@ -14,9 +14,10 @@ class RoomController
     el = this.getRoomEl(room)
     el.body.insertHtml "beforeEnd", html
     el.body.scroll 'b', 100000, false
-    if room isnt this.getActiveRoom()
-      this.getTabEl(room).setIconCls('commentadd')
-      this.getTabEl(room).setIconCls('commentadd') # Yes, this needs to be here. For some reason Ext doesn't do it right without it.
+    if ""+room != ""+this.getActiveRoom()
+      roomEl = this.getTabEl(room)
+      roomEl.setIconCls('commentadd')
+      roomEl.setIconCls('commentadd') # Yes, this needs to be here. For some reason Ext doesn't do it right without it.
   setActiveRoom: (id) ->
     pad = Ext.getCmp @chatpad
     tab = this.getTabEl id
