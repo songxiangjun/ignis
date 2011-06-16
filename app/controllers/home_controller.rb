@@ -29,13 +29,22 @@ class HomeController < ApplicationController
 
     render :json => @response
   end
+
+  def plainHistory
+    @start = params[:start] ? params[:start].to_date : Time.now - 1.day
+    @end = params[:end] ? params[:end].to_date : Time.now
+    
+    history = Message.where("created_at >= :start AND created_at <= :end", {:start => @start, :end => @end})
+    
+    render :partial => "history", :locals => { :fromdate => @start, :todate => @end, :messages => history }
+  end
   
   def history
     @response = Hash.new
     @time = Time.now - 1.day # Default history is 1 day.
     @current = Time.now
     messages = Hash.new
-
+    
     order_room_messages(Message.where("created_at > ?", @time).where(:room_id => params[:rooms])).each do |key, msgs|
       messages[key] = render_to_string :partial => "history", :locals => { :fromdate => @time, :todate => @current, :messages => msgs }
     end

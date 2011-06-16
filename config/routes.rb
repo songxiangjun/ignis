@@ -11,6 +11,7 @@ Ignis::Application.routes.draw do
   get 'rooms' => "room#index"
   post 'poll' => "home#provider"
   post 'history' => "home#history"
+  match 'plainhistory' => 'home#plainHistory'
 
   root :to => "home#index"
 

@@ -48,10 +48,17 @@ endDate =
   vtype          : 'histdaterange'
   startDateField : 'startdt'
   format         : 'Y/m/d'
+getDates = ->
+  { start: Ext.getCmp('startdt').getValue(), end: Ext.getCmp('enddt').getValue() }
 submitDate =
   text     : 'Submit'
   icon     : '/assets/16x16/calendar_date.png'
-  handler  : -> Ext.emptyFn()
+  handler  : (button) -> 
+    Ext.Ajax.request 
+      scope    : this
+      url      : '/plainhistory'
+      success  : (response) -> button.up('window').down('panel').update(response.responseText)
+      params   : getDates()
 
 Ext.define 'ignis.view.HistoryWindow'
   extend   : 'Ext.window.Window'
@@ -65,6 +72,7 @@ Ext.define 'ignis.view.HistoryWindow'
   modal    : true
   tbar     : [ startDate, 'to', endDate, submitDate, '->', searchField, submitSearch ]
   items    : 
+    autoScroll  : true
     layout      : 'fit'
     bodyPadding : 5
     html        : 'Pick a date range or submit a search.'
