@@ -14,8 +14,11 @@ class HomeController < ApplicationController
       @time = Time.now
     end
 
-    @response[:messages] = orderRoomMessages Message.where("created_at > ?", @time).where(:room_id => params[:rooms])
+    @response[:messages] = order_room_messages Message.where("created_at > ?", @time).where(:room_id => params[:rooms])
+    @response[:users] = get_recent_users
     @response[:time] = Time.now.to_f
+
+    update_seen_at_time
 
     render :json => @response
   end
@@ -24,7 +27,7 @@ class HomeController < ApplicationController
     @response = Hash.new
     @time = Time.now - 1.day # Default history is 1 day.
 
-    @response[:messages] = orderRoomMessages Message.where("created_at > ?", @time).where(:room_id => params[:rooms])
+    @response[:messages] = order_room_messages Message.where("created_at > ?", @time).where(:room_id => params[:rooms])
     @response[:time] = Time.now.to_f
 
     render :json => @response
@@ -32,7 +35,7 @@ class HomeController < ApplicationController
   
   private
   
-  def orderRoomMessages(message_array)
+  def order_room_messages(message_array)
     rooms = Hash.new
     html = Hash.new
     
@@ -52,6 +55,17 @@ class HomeController < ApplicationController
 
     end
     
-    return html
+    html
+  end
+
+  def update_seen_at_time
+    current_user.seen_at = Time.now
+    current_user.save
+  end
+
+  def get_recent_users
+    @users = Array.new
+    User.where("seen_at > ?", Time.now - 5.minutes).select(:username).each { |user| @users.push user.username }
+    @users.sort().join ', '
   end
 end
