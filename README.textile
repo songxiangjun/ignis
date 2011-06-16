@@ -1,1 +1,29 @@
 h2. Ignis
+
+A rich-interface web-based multi-user persistent chat application.
+
+h4. Credit
+
+This application was inspired by Campfire which is a product of 37signals.
+
+Unfortunately, I was unable to use a public service when behind a firewall for a particular company. So I decided to build my own persisting group-chat app. It is an ongoing effort.
+
+h4. Features
+
+* Web based multi-room chat application
+* All conversations are logged and to the database
+* Automatically receive the last days worth of content in any room you enter
+* Active user notification when they aren't in a room that receives the message
+
+h4. Technologies used
+
+Being the person I am, I built on top of other great technologies. Such as...
+
+* Ruby on Rails (including such gems as: haml, sass, devise, redcloth and more...)
+* ExtJS4 (an amazing rich UI framework produced by Sencha)
+
+I presently use SQLite for my production database, but I have not strayed from active record. So you should be able to put any database you like behind it, assuming you have knowledge of how Ruby on Rails works.
+
+h4. License
+
+This software is licensed under GPLv3 (only due to it being required by ExtJS4's usage- Sorry! Not a fan of forcing licenses myself).
