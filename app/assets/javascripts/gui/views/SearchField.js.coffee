@@ -3,3 +3,4 @@ Ext.define 'ignis.view.SearchField'
   alias       : 'widget.searchfield'
   name        : 'search'
   emptyText   : 'Search terms...'
+  maxLength   : 30

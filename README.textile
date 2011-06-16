@@ -1,4 +1,4 @@
-Ignis is an RIA(Rich Internet Application) for multi-user persistent-forever chatting.
+h3. Ignis is an RIA(Rich Internet Application) for multi-user persistent-forever chatting.
 
 Why is this cool? Simple. If you're on a project that needs a lot of knowledge sharing, it's easy to build up a base of information by just talking about it, and having it searchable.
 

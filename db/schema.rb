@@ -10,7 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110616040721) do
+ActiveRecord::Schema.define(:version => 20110616213732) do
+
+  create_table "feeds", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "messages", :force => true do |t|
     t.string   "content"
@@ -32,8 +40,8 @@ ActiveRecord::Schema.define(:version => 20110616040721) do
 
   create_table "users", :force => true do |t|
     t.string   "username"
-    t.string   "email",                                 :default => "", :null => false
-    t.string   "encrypted_password",     :limit => 128, :default => "", :null => false
+    t.string   "email",                                 :default => "",    :null => false
+    t.string   "encrypted_password",     :limit => 128, :default => "",    :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -45,7 +53,7 @@ ActiveRecord::Schema.define(:version => 20110616040721) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "seen_at"
-    t.boolean  "is_admin"
+    t.boolean  "is_admin",                              :default => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
