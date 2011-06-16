@@ -29,6 +29,9 @@ class PollingCommunicator
       for room, messages of json.messages
         window.rc.displayMessages room, messages
 
+    if json.users isnt undefined
+      Ext.getCmp('activeusers').setText(json.users)
+      
     window.recentTime = json.time
     
   setTimer: ->

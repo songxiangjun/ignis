@@ -40,6 +40,7 @@ Ext.define 'ignis.view.Viewport'
     xtype  : 'panel'
     layout : 'fit'
     tbar: [ roomButton, historyButton, search, '->', profileButton, logoutButton ]
+    bbar: [ 'Users recently active: ', { xtype: 'tbtext', text: '', id: 'activeusers' } ]
     #bbar: ['Status: ']
     items  : 
       xtype       : 'tabpanel'
