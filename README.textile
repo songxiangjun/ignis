@@ -8,18 +8,51 @@ This application was inspired by Campfire which is a product of 37signals.
 
 Unfortunately, I was unable to use a public service when behind a firewall for a particular company. So I decided to build my own persisting group-chat app. It is an ongoing effort.
 
+h4. Installing
+
+You must have Ruby 1.9.2 installed. All needed gems come bundled.
+
+Check out the code from github, and then run the following commands:
+
+<pre>
+<code>
+  bundle install
+  rake db:migrate
+  thin start
+</code>
+</pre>
+
+That's it!
+
 h4. Features
 
-* Web based multi-room chat application
-* All conversations are logged and to the database
-* Automatically receive the last days worth of content in any room you enter
-* Active user notification when they aren't in a room that receives the message
+* Web based multi-room chat application.
+* All conversations are logged and to the database.
+* Automatically receive the last days worth of content in any room you enter.
+* Active user notification when they aren't in a room that receives the message.
+* When joining a room you automatically get a days worth of history.
+* Alterable username so you can always pick a username that suits you.
+
+h4. Features "in the pipeline"
+
+Short term:
+* Pulling History for rooms.
+* Link messages to their original writers.
+* Adding a guest account for instant login.
+* Search through chat history.
+
+Mid term:
+* Move all authentication to real ExtJS components.
+
+Long term:
+* Adding permissions for users... unsure of what form this will take, yet.
+* At some point, if I get a chance, I would like to pull in proper SASS theming for ExtJS.
 
 h4. Technologies used
 
 Being the person I am, I built on top of other great technologies. Such as...
 
-* Ruby on Rails (including such gems as: haml, sass, devise, redcloth and more...)
+* Ruby on Rails (including such gems as: haml, sass, coffeescript, devise, redcloth and more...)
 * ExtJS4 (an amazing rich UI framework produced by Sencha)
 
 I presently use SQLite for my production database, but I have not strayed from active record. So you should be able to put any database you like behind it, assuming you have knowledge of how Ruby on Rails works.
