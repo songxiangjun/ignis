@@ -1,14 +1,14 @@
-h2. Ignis
+Ignis is an RIA(Rich Internet Application) for multi-user persistent-forever chatting.
 
-A rich-interface web-based multi-user persistent chat application.
+Why is this cool? Simple. If you're on a project that needs a lot of knowledge sharing, it's easy to build up a base of information by just talking about it, and having it searchable.
 
-h4. Credit
+h3. Credit
 
 This application was inspired by Campfire which is a product of 37signals.
 
 Unfortunately, I was unable to use a public service when behind a firewall for a particular company. So I decided to build my own persisting group-chat app. It is an ongoing effort.
 
-h4. Installing
+h3. Installing
 
 You must have Ruby 1.9.2 installed. All needed gems come bundled.
 
@@ -24,7 +24,7 @@ Check out the code from github, and then run the following commands:
 
 That's it!
 
-h4. Features
+h3. Features
 
 * Web based multi-room chat application.
 * All conversations are logged and to the database.
@@ -32,23 +32,27 @@ h4. Features
 * Active user notification when they aren't in a room that receives the message.
 * When joining a room you automatically get a days worth of history.
 * Alterable username so you can always pick a username that suits you.
+* Messages are fully encoded, so you can post code or anything else you want in them.
 
-h4. Features "in the pipeline"
+h3. Features "in the pipeline"
 
-Short term:
+h5. Short term:
+
 * Pulling History for rooms.
 * Link messages to their original writers.
 * Adding a guest account for instant login.
 * Search through chat history.
 
-Mid term:
+h5. Mid term:
+
 * Move all authentication to real ExtJS components.
 
-Long term:
+h5. Long term:
+
 * Adding permissions for users... unsure of what form this will take, yet.
 * At some point, if I get a chance, I would like to pull in proper SASS theming for ExtJS.
 
-h4. Technologies used
+h3. Technologies used
 
 Being the person I am, I built on top of other great technologies. Such as...
 
@@ -57,6 +61,6 @@ Being the person I am, I built on top of other great technologies. Such as...
 
 I presently use SQLite for my production database, but I have not strayed from active record. So you should be able to put any database you like behind it, assuming you have knowledge of how Ruby on Rails works.
 
-h4. License
+h3. License
 
 This software is licensed under GPLv3 (only due to it being required by ExtJS4's usage- Sorry! Not a fan of forcing licenses myself).
