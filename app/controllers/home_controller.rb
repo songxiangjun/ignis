@@ -7,6 +7,7 @@ class HomeController < ApplicationController
 
   def provider
     @response = Hash.new
+    messages = Hash.new
     
     if params.has_key? :time and !params[:time].empty?
       @time = Time.at params[:time].to_f
@@ -14,7 +15,13 @@ class HomeController < ApplicationController
       @time = Time.now
     end
 
-    @response[:messages] = order_room_messages Message.where("created_at > ?", @time).where(:room_id => params[:rooms])
+    rooms = order_room_messages Message.where("created_at > ?", @time).where(:room_id => params[:rooms])
+
+    rooms.each do |key, roomdata|
+      messages[key] = render_to_string :partial => "messages", :locals => { :messages => roomdata }
+    end
+
+    @response[:messages] = messages
     @response[:users] = get_recent_users
     @response[:time] = Time.now.to_f
 
@@ -26,9 +33,15 @@ class HomeController < ApplicationController
   def history
     @response = Hash.new
     @time = Time.now - 1.day # Default history is 1 day.
+    @current = Time.now
+    messages = Hash.new
 
-    @response[:messages] = order_room_messages Message.where("created_at > ?", @time).where(:room_id => params[:rooms])
-    @response[:time] = Time.now.to_f
+    order_room_messages(Message.where("created_at > ?", @time).where(:room_id => params[:rooms])).each do |key, msgs|
+      messages[key] = render_to_string :partial => "history", :locals => { :fromdate => @time, :todate => @current, :messages => msgs }
+    end
+
+    @response[:messages] = messages
+    @response[:time] = @current.to_f
 
     render :json => @response
   end
@@ -37,8 +50,7 @@ class HomeController < ApplicationController
   
   def order_room_messages(message_array)
     rooms = Hash.new
-    html = Hash.new
-    
+
     if message_array.length > 0
 
       message_array.each do |msg|
@@ -48,14 +60,10 @@ class HomeController < ApplicationController
           rooms[msg.room_id] = [ msg ]
         end
       end
-      
-      rooms.each do |key, roomdata|
-        html[key] = render_to_string :partial => "messages", :locals => { :messages => roomdata }
-      end
 
     end
     
-    html
+    rooms
   end
 
   def update_seen_at_time
