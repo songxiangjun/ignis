@@ -31,10 +31,11 @@ class HomeController < ApplicationController
   end
 
   def plainHistory
-    @start = params[:start] ? params[:start].to_date : Time.now - 1.day
-    @end = params[:end] ? params[:end].to_date : Time.now
+    @start = (params[:start] and !params[:start].empty?) ? params[:start].to_date : Time.now - 1.year
+    @end = (params[:end] and !params[:end].empty?) ? params[:end].to_date : Time.now
+    @search = "%" + (params[:search] ? params[:search] : "") + "%"
     
-    history = Message.where("created_at >= :start AND created_at <= :end", {:start => @start, :end => @end})
+    history = Message.where("created_at >= :start AND created_at <= :end", {:start => @start, :end => @end}).where("content LIKE ?", @search)
     
     render :partial => "history", :locals => { :fromdate => @start, :todate => @end, :messages => history }
   end

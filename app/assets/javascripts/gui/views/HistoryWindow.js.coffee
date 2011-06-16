@@ -22,13 +22,8 @@ Ext.apply Ext.form.field.VTypes,
 
 searchField = 
   xtype   : 'searchfield'
+  width   : 200
   id      : 'primarysearch'
-  disabled: true
-submitSearch = 
-  text     : 'Search'
-  icon     : '/assets/16x16/search.png'
-  handler  : -> Ext.emptyFn()
-  disabled : true
 
 startDate =
   xtype        : 'datefield'
@@ -39,6 +34,7 @@ startDate =
   vtype        : 'histdaterange'
   endDateField : 'enddt'
   format       : 'Y/m/d'
+  emptyText    : 'Start date'
 endDate =
   xtype          : 'datefield'
   width          : 115
@@ -48,11 +44,16 @@ endDate =
   vtype          : 'histdaterange'
   startDateField : 'startdt'
   format         : 'Y/m/d'
+  emptyText      : 'End date'
 getDates = ->
-  { start: Ext.getCmp('startdt').getValue(), end: Ext.getCmp('enddt').getValue() }
-submitDate =
+  { 
+    start  : Ext.getCmp('startdt').getValue()
+    end    : Ext.getCmp('enddt').getValue() 
+    search : Ext.getCmp('primarysearch').getValue()
+  }
+submit =
   text     : 'Submit'
-  icon     : '/assets/16x16/calendar_date.png'
+  icon     : '/assets/16x16/search.png'
   handler  : (button) -> 
     Ext.Ajax.request 
       scope    : this
@@ -70,7 +71,7 @@ Ext.define 'ignis.view.HistoryWindow'
   autoShow : true
   autoRender: true
   modal    : true
-  tbar     : [ startDate, 'to', endDate, submitDate, '->', searchField, submitSearch ]
+  tbar     : [ startDate, 'to', endDate, '-', searchField, '->', submit ]
   items    : 
     autoScroll  : true
     layout      : 'fit'
