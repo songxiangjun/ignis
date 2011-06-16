@@ -29,6 +29,8 @@ logoutButton =
 changeTabFn = (tp, newpanel, oldpanel) -> 
   newpanel.setIconCls ''
   newpanel.setIconCls ''  # Yes, this needs to be here. For some reason Ext doesn't do it right without it.
+tabRemoveFn = (tp, panel) ->
+  window.rc.removeRoom panel.room
 
 Ext.define 'ignis.view.Viewport'
   extend : 'Ext.container.Viewport'
@@ -46,6 +48,7 @@ Ext.define 'ignis.view.Viewport'
       id          : 'chatpad'
       items       : []
       listeners   :
-        tabchange   : changeTabFn
+        tabchange    : changeTabFn
+        beforeremove : tabRemoveFn
       
       

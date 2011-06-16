@@ -7,6 +7,7 @@ class RoomController
   getRoomEl: (room) -> Ext.ComponentQuery.query('panel[room='+room+'] > chatpanel')[0]
   getTabEl: (room) -> Ext.ComponentQuery.query('panel[room='+room+']')[0]
   getActiveRoom: -> Ext.getCmp(@chatpad).getActiveTab().room
+  removeRoom: (room) -> delete @roomlist[room]
   getRoomIDs: ->
     ids = for id, tabId of @roomlist
       id    
