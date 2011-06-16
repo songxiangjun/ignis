@@ -1,3 +1,4 @@
+
 roomButton =
   text    : 'Rooms'
   icon    : '/assets/16x16/comments.png'
@@ -8,13 +9,7 @@ roomButton =
 historyButton =
   text    : 'History'
   icon    : '/assets/16x16/clock.png'
-  handler : -> Ext.Msg.alert 'Status', 'Not ready yet.'
-  disabled: true
-  
-search = 
-  xtype   : 'searchfield'
-  id      : 'primarysearch'
-  disabled: true
+  handler : -> Ext.widget 'historywindow'
   
 profileButton =
   text    : 'Your Profile'
@@ -39,7 +34,7 @@ Ext.define 'ignis.view.Viewport'
   items  :
     xtype  : 'panel'
     layout : 'fit'
-    tbar: [ roomButton, historyButton, search, '->', profileButton, logoutButton ]
+    tbar: [ roomButton, historyButton, '->', profileButton, logoutButton ]
     bbar: [ 'Users recently active: ', { xtype: 'tbtext', text: '', id: 'activeusers' } ]
     #bbar: ['Status: ']
     items  : 
