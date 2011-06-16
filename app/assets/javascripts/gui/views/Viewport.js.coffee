@@ -1,7 +1,9 @@
 roomButton =
   text    : 'Rooms'
   icon    : '/assets/16x16/comments.png'
-  handler : -> Ext.widget 'roompicker'
+  handler : ->
+    Ext.data.StoreManager.lookup('rooms').load()
+    Ext.widget 'roompicker'
 
 historyButton =
   text    : 'History'

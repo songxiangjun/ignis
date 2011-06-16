@@ -26,6 +26,9 @@ Ext.define 'ignis.view.RoomWindow'
     layout   : 'fit'
     border   : false
     singleSelect: true
+    viewConfig:
+      emptyText: 'No rooms available.'
+      deferEmptyText: false
     store    : Ext.data.StoreManager.lookup('rooms')
     columns  : [ 
       { header: 'Room Name',   dataIndex: 'name' }

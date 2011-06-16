@@ -58,7 +58,7 @@ class RoomController
         'rooms[]' : room
       success  : (response) ->
         json = Ext.JSON.decode response.responseText
-        if json.messages isnt undefined
+        if json.messages isnt undefined and json.messages[room] isnt undefined
           window.rc.displayMessages room, json.messages[room]
 
         window.poller.doPoll()
