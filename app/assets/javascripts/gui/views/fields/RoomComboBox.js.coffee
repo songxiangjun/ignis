@@ -8,3 +8,4 @@ Ext.define "ignis.view.RoomComboBox",
   forceSelection : true
   autoSelect     : true
   store          : Ext.data.StoreManager.lookup('rooms')
+  emptyText      : 'Pick a room'

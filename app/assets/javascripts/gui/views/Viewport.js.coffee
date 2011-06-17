@@ -1,4 +1,20 @@
+roomBox =
+  xtype     : 'roomcombobox'
+  id        : 'pickroom'
+  width     : 150
+joinButton = 
+  text    : 'Join Room'
+  icon    : '/assets/16x16/comment.png'
+  handler : (b) -> 
+    box = b.up('panel').down('roomcombobox')
+    room = Ext.data.StoreManager.lookup('rooms').getById(box.getValue()).data
+    if window.rc.roomExist room.id
+      window.rc.setActiveRoom room.id
+    else
+      window.rc.joinRoom room.id, room.name, true
+    box.clearValue()
 
+  
 historyButton =
   text    : 'History'
   icon    : '/assets/16x16/clock.png'
@@ -27,13 +43,14 @@ Ext.define 'ignis.view.Viewport'
   items  :
     xtype  : 'panel'
     layout : 'fit'
-    bbar   : [ 'Users recently active: ', { xtype: 'tbtext', text: '', id: 'activeusers' }, '->', historyButton, '-', profileButton, logoutButton ]
+    tbar   : [ roomBox, joinButton, '-', historyButton, '->', profileButton, logoutButton ]
+    bbar   : [ 'Users recently active: ', { xtype: 'tbtext', text: '', id: 'activeusers' } ]
     items  :
       xtype       : 'tabpanel'
-      tabPosition : 'top'
+      tabPosition : 'bottom'
       layout      : 'fit'
       id          : 'chatpad'
-      items       : [ { xtype: 'roompicker' } ]
+      items       : [ ]
       listeners   :
         tabchange    : changeTabFn
         beforeremove : tabRemoveFn
