@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e3b21f3-8b1e-42ce-bc68-9f32328011c5" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/gui/views/fields/RoomComboBox.js.coffee" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/gui/views/Viewport.js.coffee" afterPath="$PROJECT_DIR$/app/assets/javascripts/gui/views/Viewport.js.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/gui/views/windows/RoomWindow.js.coffee" afterPath="$PROJECT_DIR$/app/assets/javascripts/gui/views/windows/RoomWindow.js.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/home/index.html.haml" afterPath="$PROJECT_DIR$/app/views/home/index.html.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/gui/views/windows/HistoryWindow.js.coffee" afterPath="$PROJECT_DIR$/app/assets/javascripts/gui/views/windows/HistoryWindow.js.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/home_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/home_controller.rb" />
     </list>
     <ignored path="ignis.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -77,16 +76,34 @@
       <file leaf-file-name="RoomWindow.js.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/gui/views/windows/RoomWindow.js.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="6" selection-start="769" selection-end="769" vertical-scroll-proportion="0.0">
+            <state line="22" column="50" selection-start="592" selection-end="629" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HistoryWindow.js.coffee" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="HistoryWindow.js.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/gui/views/windows/HistoryWindow.js.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="3" selection-start="1068" selection-end="1068" vertical-scroll-proportion="0.7038123">
+            <state line="44" column="26" selection-start="1228" selection-end="1228" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home_controller.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/home_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="39" column="0" selection-start="1155" selection-end="1155" vertical-scroll-proportion="0.24633431">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RoomComboBox.js.coffee" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/gui/views/fields/RoomComboBox.js.coffee">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="19" selection-start="263" selection-end="263" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -106,7 +123,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/assets/javascripts/gui/views/ChatInputPanel.js.coffee" />
         <option value="$PROJECT_DIR$/db/schema.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20110614135213_create_rooms.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
@@ -115,13 +131,14 @@
         <option value="$PROJECT_DIR$/db/migrate/20110616040721_new_user_attributes.rb" />
         <option value="$PROJECT_DIR$/app/controllers/room_controller.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/ajax.js.coffee" />
-        <option value="$PROJECT_DIR$/app/controllers/home_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/home/_history.html.haml" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/message.css.scss" />
         <option value="$PROJECT_DIR$/app/views/home/index.html.haml" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/gui/views/windows/RoomWindow.js.coffee" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/gui/views/Viewport.js.coffee" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/gui/views/fields/RoomComboBox.js.coffee" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/gui/views/windows/HistoryWindow.js.coffee" />
+        <option value="$PROJECT_DIR$/app/controllers/home_controller.rb" />
       </list>
     </option>
   </component>
@@ -975,13 +992,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db/schema.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="13" selection-start="1851" selection-end="1851" vertical-scroll-proportion="0.7536657">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20110616040721_new_user_attributes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="15" selection-start="160" selection-end="160" vertical-scroll-proportion="0.10557185">
@@ -1031,13 +1041,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/home_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="2" selection-start="1713" selection-end="1821" vertical-scroll-proportion="0.56304985">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/room.js.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state line="48" column="33" selection-start="1618" selection-end="1618" vertical-scroll-proportion="0.80938417">
@@ -1066,13 +1069,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/gui/views/windows/RoomWindow.js.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="6" selection-start="769" selection-end="769" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/gui/views/fields/DateField.js.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="20" selection-start="864" selection-end="864" vertical-scroll-proportion="0.40469208">
@@ -1080,9 +1076,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/gui/views/windows/RoomWindow.js.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="50" selection-start="592" selection-end="629" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/gui/views/fields/RoomComboBox.js.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="19" selection-start="263" selection-end="263" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/gui/views/windows/HistoryWindow.js.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="3" selection-start="1068" selection-end="1068" vertical-scroll-proportion="0.7038123">
+        <state line="44" column="26" selection-start="1228" selection-end="1228" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/home_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="0" selection-start="1155" selection-end="1155" vertical-scroll-proportion="0.24633431">
           <folding />
         </state>
       </provider>

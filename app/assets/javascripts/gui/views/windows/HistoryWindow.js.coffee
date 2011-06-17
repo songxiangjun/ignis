@@ -1,4 +1,7 @@
-
+roomBox =
+  xtype     : 'roomcombobox'
+  id        : 'histroomid'
+  width     : 150
 startDate =
   xtype        : 'historydatefield'
   id           : 'startdt'
@@ -22,7 +25,8 @@ submit =
       url      : '/plainhistory'
       success  : (response) -> button.up('window').down('panel').update(response.responseText)
       params   : ->
-        { 
+        {
+          room   : Ext.getCmp('histroomid').getValue()
           start  : Ext.getCmp('startdt').getValue()
           end    : Ext.getCmp('enddt').getValue() 
           search : Ext.getCmp('primarysearch').getValue()
@@ -34,11 +38,11 @@ Ext.define 'ignis.view.HistoryWindow'
   layout   : 'fit'
   title    : 'Chat History'
   height   : 400
-  width    : 700
+  width    : 800
   autoShow : true
   autoRender: true
   modal    : true
-  tbar     : [ startDate, 'to', endDate, '-', searchField, '->', submit ]
+  tbar     : [ roomBox, '-', startDate, 'to', endDate, '-', searchField, '->', submit ]
   items    : 
     autoScroll  : true
     layout      : 'fit'
