@@ -39,9 +39,10 @@ h3. Features "in the pipeline"
 h5. Short term:
 
 * Link messages to their original writers.
-* Create a method for an admin to add new rooms
+* Create admin area to... add chat rooms, add project groups, alter the message on the MotD tab.
+* Create MotD tab
+* Create project groups
 * Adding a guest account for instant login.
-* Creating "projects" that will restrict rooms.
 
 h5. Mid term:
 
