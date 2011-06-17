@@ -1,7 +1,7 @@
 roomBox =
   xtype     : 'roomcombobox'
   id        : 'pickroom'
-  width     : 200
+  width     : 250
 joinButton = 
   text    : 'Join Room'
   icon    : '/assets/16x16/comment.png'
