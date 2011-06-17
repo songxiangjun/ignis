@@ -17,7 +17,7 @@ Ext.Ajax.on 'requestException', exceptionFn
 class PollingCommunicator
 
   constructor: (@ns) ->
-    @interval = 10 * 1000
+    @interval = 7 * 1000
     @pollUri = '/poll'
     @timer = null
     @self = this
