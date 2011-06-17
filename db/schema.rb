@@ -12,14 +12,6 @@
 
 ActiveRecord::Schema.define(:version => 20110616213732) do
 
-  create_table "feeds", :force => true do |t|
-    t.string   "name"
-    t.string   "description"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "messages", :force => true do |t|
     t.string   "content"
     t.string   "author"

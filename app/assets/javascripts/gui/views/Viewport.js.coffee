@@ -1,11 +1,4 @@
 
-roomButton =
-  text    : 'Rooms'
-  icon    : '/assets/16x16/comments.png'
-  handler : ->
-    Ext.data.StoreManager.lookup('rooms').load()
-    Ext.widget 'roompicker'
-
 historyButton =
   text    : 'History'
   icon    : '/assets/16x16/clock.png'
@@ -34,15 +27,13 @@ Ext.define 'ignis.view.Viewport'
   items  :
     xtype  : 'panel'
     layout : 'fit'
-    tbar: [ roomButton, historyButton, '->', profileButton, logoutButton ]
-    bbar: [ 'Users recently active: ', { xtype: 'tbtext', text: '', id: 'activeusers' } ]
-    #bbar: ['Status: ']
-    items  : 
+    bbar   : [ 'Users recently active: ', { xtype: 'tbtext', text: '', id: 'activeusers' }, '->', historyButton, '-', profileButton, logoutButton ]
+    items  :
       xtype       : 'tabpanel'
-      tabPosition : 'bottom'
+      tabPosition : 'top'
       layout      : 'fit'
       id          : 'chatpad'
-      items       : []
+      items       : [ { xtype: 'roompicker' } ]
       listeners   :
         tabchange    : changeTabFn
         beforeremove : tabRemoveFn
