@@ -1,10 +1,11 @@
 %hr
-#history
-  %h3
-    History from
-    %span.from= fromdate.strftime("%y/%m/%d %H:%M %Z")
-    to
-    %span.to= todate.strftime("%y/%m/%d %H:%M %Z")
-    = "."
-= render :partial => "messages", :locals => { :messages => messages }
+- if fromdate != nil and todate != nil
+	#history
+		%h3
+			History from
+			%span.from= fromdate.strftime("%y/%m/%d %H:%M %Z")
+			to
+			%span.to= todate.strftime("%y/%m/%d %H:%M %Z")
+			= "."
+= render :partial => "home/messages", :locals => { :messages => messages }
 %hr

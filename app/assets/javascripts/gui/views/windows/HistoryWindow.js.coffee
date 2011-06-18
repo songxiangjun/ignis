@@ -22,14 +22,14 @@ submit =
   handler  : (button) -> 
     Ext.Ajax.request 
       scope    : this
-      url      : '/plainhistory'
+      url      : window.link.history
       success  : (response) -> button.up('window').down('panel').update(response.responseText)
       params   : ->
         {
-          room   : Ext.getCmp('histroomid').getValue()
-          start  : Ext.getCmp('startdt').getValue()
-          end    : Ext.getCmp('enddt').getValue() 
-          search : Ext.getCmp('primarysearch').getValue()
+          'rooms[]' : Ext.getCmp('histroomid').getValue()
+          start     : Ext.getCmp('startdt').getValue()
+          end       : Ext.getCmp('enddt').getValue() 
+          search    : Ext.getCmp('primarysearch').getValue()
         }
 
 Ext.define 'ignis.view.HistoryWindow'

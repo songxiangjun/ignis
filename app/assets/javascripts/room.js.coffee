@@ -2,7 +2,7 @@ class RoomController
   constructor: ->
     @roomlist = {} # Each entry should be a hash of { id: name }
     @chatpad = 'chatpad'
-    @historyUri = '/history'
+    @historyUri = window.link.history
     
   getRoomEl: (room) -> Ext.ComponentQuery.query('panel[room='+room+'] > chatpanel')[0]
   getTabEl: (room) -> Ext.ComponentQuery.query('panel[room='+room+']')[0]
@@ -58,10 +58,7 @@ class RoomController
       params   :
         'rooms[]' : room
       success  : (response) ->
-        json = Ext.JSON.decode response.responseText
-        if json.messages isnt undefined and json.messages[room] isnt undefined
-          window.rc.displayMessages room, json.messages[room]
-
+        window.rc.displayMessages room, response.responseText
         window.poller.doPoll()
 
 window.rc = new RoomController
