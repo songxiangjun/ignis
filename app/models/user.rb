@@ -10,4 +10,11 @@ class User < ActiveRecord::Base
 
   has_many :messages
   has_many :feeds, :dependent => :nullify
+
+  def self.recent
+    users = Array.new
+    where("seen_at > ?", Time.now - 5.minutes).select(:username).each { |user| users.push user.username }
+    users.sort()
+  end
+
 end
