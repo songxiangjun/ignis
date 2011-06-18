@@ -1,8 +1,8 @@
 class HistoryController < LoggedInController
 
   def show
-    return head :bad_request unless params.has_key? :rooms and !params[:rooms].empty? # Sanity check
-
+    return head :bad_request unless params.has_key? :rooms and params[:rooms].instance_of? Array and not params[:rooms][0].empty? # Sanity check
+    
     rooms       = params[:rooms]
     starttime   = (params.has_key? :start  and not params[:start].empty?)  ? params[:start].to_date  : nil
     endtime     = (params.has_key? :end    and not params[:end].empty?)    ? params[:end].to_date    : nil
