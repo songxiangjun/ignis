@@ -48,3 +48,4 @@ Ext.define 'ignis.view.HistoryWindow'
     layout      : 'fit'
     bodyPadding : 5
     html        : 'Pick a date range or submit a search.'
+  	cls         : 'messages'

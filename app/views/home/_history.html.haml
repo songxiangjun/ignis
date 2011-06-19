@@ -1,11 +1,17 @@
 %hr
-- if fromdate != nil and todate != nil
-	#history
-		%h3
-			History from
+#history
+	%h3
+		- if fromdate == nil and todate == nil and terms == nil
+			Recent Room
+		History
+		- if fromdate != nil and todate != nil
+			from
 			%span.from= fromdate.strftime("%y/%m/%d %H:%M %Z")
 			to
 			%span.to= todate.strftime("%y/%m/%d %H:%M %Z")
-			= "."
+		- if terms != nil
+			for
+			%span.search= "'" + terms + "'"
+- @history = true
 = render :partial => "home/messages", :locals => { :messages => messages }
 %hr

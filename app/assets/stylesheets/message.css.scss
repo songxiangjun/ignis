@@ -3,9 +3,9 @@
 #history span.from { color: #888888; }
 #history span.to { color: #888888; }
 
-/*div.messages { padding: 10px 20px; width: 100%; }*/
-div.messages .singleMessage { margin: 1px 10px; padding: 0 10px; }
-div.messages .singleMessage.me { background: #dddddd; }
+div.messages .newday {margin: 8px 40px 2px; }
+div.messages .singleMessage { margin: 1px 10px; padding: 0 10px; background: #fcfcfc; }
+div.messages .singleMessage.me { background: #f3f3f3; }
 div.messages .time { font-size: xx-small; }
 
 div.messages p {display: inline;}

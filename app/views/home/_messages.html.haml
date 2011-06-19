@@ -4,18 +4,22 @@
 -#      %td.rightpadding.name= message.author
 -#      %td.time= message.created_at.strftime "%y/%m/%d %H:%M %Z"
 -#      %td.message= message.content
-
+- @lmsg = ""
 - messages.each do |msg|
-  - if current_user.username == msg.author
-    .singleMessage.me
-      %span.name= msg.author
-      %span.time= "(" + msg.created_at.strftime("%y/%m/%d %H:%M %Z")+ "):"
-      %span.message= msg.content
+	- if @history and msg.created_at.strftime("%y/%m/%d") > @lmsg
+		.newday= msg.created_at.strftime("%d %B, %Y")
+	- if current_user.username == msg.author
+		.singleMessage.me
+			%span.name= msg.author
+			%span.time= "(" + msg.created_at.strftime("%y/%m/%d %H:%M %Z")+ "):"
+			%span.message= msg.content
 
-  - else
-    .singleMessage
-      %span.name= msg.author
-      %span.time= "(" + msg.created_at.strftime("%y/%m/%d %H:%M %Z")+ "):"
-      %span.message= msg.content
+	- else
+		.singleMessage
+			%span.name= msg.author
+			%span.time= "(" + msg.created_at.strftime("%y/%m/%d %H:%M %Z")+ "):"
+			%span.message= msg.content
+
+	- @lmsg = msg.created_at.strftime("%y/%m/%d")
 
 
