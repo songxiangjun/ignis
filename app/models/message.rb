@@ -14,4 +14,8 @@ class Message < ActiveRecord::Base
   def self.where_in_rooms (rooms)
     where(:room_id => rooms)
   end
+  
+  def self.limit_recent
+    order("created_at DESC").limit(30)
+  end
 end

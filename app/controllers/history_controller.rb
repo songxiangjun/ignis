@@ -11,6 +11,7 @@ class HistoryController < LoggedInController
     messages = Message
     
     messages = messages.where_in_rooms(rooms)
+    messages = messages.limit_recent.reverse                    if starttime == nil and endtime == nil and searchterms == nil
     messages = messages.where_for_timerange(starttime, endtime) unless starttime   == nil and endtime == nil
     messages = messages.where_for_search(searchterms)           unless searchterms == nil
     
