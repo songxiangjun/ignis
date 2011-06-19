@@ -23,7 +23,7 @@ class LoggedInController < ApplicationController
   end
 
   def update_seen_at_time
-    current_user.update_attribute :seen_at, Time.now
+    current_user.seen
   end
   
 end

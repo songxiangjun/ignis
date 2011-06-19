@@ -14,7 +14,11 @@ class User < ActiveRecord::Base
   def self.recent
     users = Array.new
     where("seen_at > ?", Time.now - 5.minutes).select(:username).each { |user| users.push user.username }
-    users.sort()
+    users.sort
+  end
+  
+  def seen
+    update_attribute :seen_at, Time.now
   end
 
 end
