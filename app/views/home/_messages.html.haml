@@ -1,9 +1,4 @@
--#%table.messages
--#  - @messages.each do |message|
--#    %tr
--#      %td.rightpadding.name= message.author
--#      %td.time= message.created_at.strftime "%y/%m/%d %H:%M %Z"
--#      %td.message= message.content
+
 - @lmsg = ""
 - messages.each do |msg|
 	- if @history and msg.created_at.strftime("%y/%m/%d") > @lmsg
