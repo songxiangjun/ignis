@@ -4,6 +4,7 @@ roomBox =
   width     : 250
   emptyText : 'Select a room to join'
   listeners :
+    focus     : (field, options) -> Ext.data.StoreManager.lookup('rooms').load()
     select    : (field, value, options) ->
       room = Ext.data.StoreManager.lookup('rooms').getById(field.getValue()).data
       if window.rc.roomExist room.id
@@ -11,6 +12,17 @@ roomBox =
       else
         window.rc.joinRoom room.id, room.name, true
 
+setupButton = 
+  text     : 'Setup'
+  disabled : true
+  icon     : '/assets/16x16/database.png'
+  menu     :
+    items    : [
+      { text: 'Invite User to Group',  icon: '/assets/16x16/user_add.png' }
+      '-'
+      { text: 'Group Setup',           icon: '/assets/16x16/process.png'  } # Will have create, update and delete functionality
+      { text: 'Room Setup',            icon: '/assets/16x16/process.png'  } # Will have create, update and delete functionality, restricted by group
+    ]
   
 historyButton =
   text    : 'History'
@@ -40,7 +52,7 @@ Ext.define 'ignis.view.Viewport'
   items  :
     xtype  : 'panel'
     layout : 'fit'
-    tbar   : [ roomBox, '-', historyButton, '->', profileButton, logoutButton ]
+    tbar   : [ roomBox, '-', historyButton, '-', setupButton, '->', profileButton, logoutButton ]
     bbar   : [ 'Users recently active: ', { xtype: 'tbtext', text: '', id: 'activeusers' } ]
     items  :
       xtype       : 'tabpanel'
