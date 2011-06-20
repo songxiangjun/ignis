@@ -4,7 +4,7 @@ roomBox =
   width     : 250
   emptyText : 'Select a room to join'
   listeners :
-    select    : (field, value, options)->
+    select    : (field, value, options) ->
       room = Ext.data.StoreManager.lookup('rooms').getById(field.getValue()).data
       if window.rc.roomExist room.id
         window.rc.setActiveRoom room.id
