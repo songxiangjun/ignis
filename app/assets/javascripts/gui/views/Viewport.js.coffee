@@ -10,7 +10,7 @@ roomBox =
         window.rc.setActiveRoom room.id
       else
         window.rc.joinRoom room.id, room.name, true
-      field.clearValue()
+
   
 historyButton =
   text    : 'History'
