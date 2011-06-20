@@ -7,7 +7,7 @@ class MessageController < ApplicationController
     room     = params[:message][:room_id]
     username = current_user.username
 
-    if Message.create { :content => content, :room_id => room, :author => username, :user => current_user }
+    if Message.create({ :content => content, :room_id => room, :author => username, :user => current_user })
       head :ok
     end
   end
