@@ -9,7 +9,7 @@ Ext.define 'ignis.store.Rooms',
   autoLoad : true
   proxy    :
     type     : 'ajax'
-    url      : '/rooms'
+    url      : window.link.rooms
     reader   :
       type            : 'json'
       root            : 'rooms'

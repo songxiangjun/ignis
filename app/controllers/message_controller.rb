@@ -1,22 +1,15 @@
 class MessageController < ApplicationController
   before_filter :authenticate_user!
 
-  def show
-  end
-
+  # MUST add validation to this very soon.
   def create
-    @m = Message.new
-    @m.content = params[:message][:content]
-    @m.room_id = params[:message][:room_id]
-    @m.author = current_user.username
+    content  = params[:message][:content]
+    room     = params[:message][:room_id]
+    username = current_user.username
 
-    if @m.save
+    if Message.create { :content => content, :room_id => room, :author => username, :user => current_user }
       head :ok
     end
-  end
-
-  def update
-
   end
 
   def delete

@@ -6,9 +6,11 @@ Ignis::Application.routes.draw do
 #    resources :message, :only => [:create, :show, :update, :destroy]
 #  end
 
-  resources :message, :only => [:create, :show, :update, :destroy]
-  resources :room,    :only => [:create, :show, :update, :destroy]
-  get 'rooms' => "room#index"
+  resources :message,    :only => [:create, :destroy]
+  resources :room,       :only => [:index, :create, :update, :destroy]
+  resources :group,      :only => [:index, :create, :update, :destroy]
+  resources :membership, :only => [:index, :create, :update, :destroy]
+
   post 'poll' => "poll#provider"
   match 'history(.:format)' => "history#show"
 

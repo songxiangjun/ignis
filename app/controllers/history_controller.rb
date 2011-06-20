@@ -15,8 +15,10 @@ class HistoryController < LoggedInController
     messages = messages.where_for_timerange(starttime, endtime) unless starttime   == nil and endtime == nil
     messages = messages.where_for_search(searchterms)           unless searchterms == nil
     
+    templateVariables = { :fromdate => starttime, :todate => endtime, :terms => searchterms, :messages => messages }
     respond_to do | format |
-      format.html { render :partial => "home/history", :locals => { :fromdate => starttime, :todate => endtime, :terms => searchterms, :messages => messages } }
+      format.html { render :partial => "home/history", :locals => templateVariables }
+      format.json { render :json => {:history => render_to_string(:partial => "home/history.html", :locals => templateVariables), :time => Time.now, :room => rooms} }
     end
   end
 

@@ -1,7 +1,8 @@
 class Message < ActiveRecord::Base
-  validates_presence_of :content
+  validates_presence_of :content, :room_id, :author
 
-  # belongs_to :user
+  belongs_to :user
+  belongs_to :room
   
   def self.where_for_timerange (from, to)
     where("created_at >= :start AND created_at <= :end", {:start => from, :end => to})
