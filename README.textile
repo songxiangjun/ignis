@@ -28,9 +28,8 @@ h3. Features
 
 * Web based multi-room chat application.
 * All conversations are logged and to the database.
-* Automatically receive the last days worth of content in any room you enter.
 * Active user notification when they aren't in a room that receives the message.
-* When joining a room you automatically get a days worth of history.
+* When joining a room you automatically receive the last 30 messages in the room.
 * Alterable username so you can always pick a username that suits you.
 * Messages are fully encoded, so you can post code or anything else you want in them.
 
@@ -38,20 +37,25 @@ h3. Features "in the pipeline"
 
 h5. Short term:
 
-* Link messages to their original writers.
-* Create admin area to... add chat rooms, add project groups, alter the message on the MotD tab.
-* Create MotD tab
-* Create project groups
+* UI and Resources for... groups and rooms
+* Create an invite resource once groups are in.
+* Links in message content should actually be hyperlinked.
+* Create MotD tab and alteration resource
 * Adding a guest account for instant login.
 
 h5. Mid term:
 
+* Add attachments to rooms. Will be in the form of a message and hyperlink. Ideally would use Riak to store, but may not be possible.
+* When getting history, all messages should be linked so that they can pop up a window that will show 'surrounding' history.
 * Move all authentication to real ExtJS components.
 
 h5. Long term:
 
-* Adding permissions for users... unsure of what form this will take, yet.
 * At some point, if I get a chance, I would like to pull in proper SASS theming for ExtJS.
+
+h5. Want a feature faster?
+
+Fork me! I take pull requests on quality code. Do feel free to shoot me a message first, if you're if it's a feature I'll accept.
 
 h3. Technologies used
 
