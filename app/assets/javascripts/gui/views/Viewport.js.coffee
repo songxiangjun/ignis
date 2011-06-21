@@ -18,7 +18,7 @@ setupButton =
   icon     : '/assets/16x16/database.png'
   menu     :
     items    : [
-      { text: 'Invite User to Group',  icon: '/assets/16x16/user_add.png' }
+      { text: 'Add User to Group',  icon: '/assets/16x16/user_add.png' }
       '-'
       { text: 'Group Setup',           icon: '/assets/16x16/process.png'  } # Will have create, update and delete functionality
       { text: 'Room Setup',            icon: '/assets/16x16/process.png'  } # Will have create, update and delete functionality, restricted by group
