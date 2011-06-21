@@ -3,11 +3,14 @@
 #history span.from { color: #888888; }
 #history span.to { color: #888888; }
 
-div.messages .newday {margin: 8px 40px 2px; }
+div.messages .newday {margin: 8px 30px 2px; padding: 1px 10px; background: #e5e5ff; }
 div.messages .singleMessage { margin: 1px 10px; padding: 0 10px; background: #fcfcfc; }
 div.messages .singleMessage.me { background: #f3f3f3; }
-div.messages .time { font-size: xx-small; }
+div.messages .time
 
 div.messages p {display: inline;}
+div.messages span.name { font-weight: bold; color: #000088; }
+div.messages span.time { font-size: xx-small; color: #666666; }
+div.messages span.message
 
 .commentadd { background-image: url(/assets/16x16/comment_add.png); }
