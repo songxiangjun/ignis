@@ -17,8 +17,8 @@ class RoomController
     el.body.scroll 'b', 100000, false
     if ""+room != ""+this.getActiveRoom()
       roomEl = this.getTabEl(room)
-      roomEl.setIconCls('commentadd')
-      roomEl.setIconCls('commentadd') # Yes, this needs to be here. For some reason Ext doesn't do it right without it.
+      roomEl.tab.setIcon('/assets/16x16/comment_add.png')
+      roomEl.tab.ownerCt.doLayout()
   setActiveRoom: (id) ->
     pad = Ext.getCmp @chatpad
     tab = this.getTabEl id

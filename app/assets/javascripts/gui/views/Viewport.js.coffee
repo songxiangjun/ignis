@@ -40,8 +40,8 @@ logoutButton =
   handler : -> window.location = link.logout
   
 changeTabFn = (tp, newpanel, oldpanel) -> 
-  newpanel.setIconCls ''
-  newpanel.setIconCls ''  # Yes, this needs to be here. For some reason Ext doesn't do it right without it.
+  newpanel.tab.setIcon ''
+  newpanel.tab.ownerCt.doLayout()
 tabRemoveFn = (tp, panel) ->
   window.rc.removeRoom panel.room
 
