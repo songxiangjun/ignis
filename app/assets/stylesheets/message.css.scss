@@ -1,47 +1,34 @@
 
-$message-namecolor: #000088;
-$message-timecolor: #666666;
-$message-bgcolor: #fcfcfc;
-$message-self-bgcolor: #f3f3f3;
-$message-historycolor: #e5e5ff;
-$history-dates-color: #888888;
+// Variables that stand alone:
+$message-namecolor: rgb(0, 0, 50%);
+$message-time-color: rgb(40%, 40%, 40%);
+$message-bgcolor: rgb(249, 249, 249);
+$message-history-bgcolor: rgb(230, 230, 255);
+
+// Variables that use other variable references:
+$message-self-bgcolor: darken($message-bgcolor, 5%);
+$history-dates-color: lighten($message-time-color, 10%);
 
 #history  {
   padding: 0px 30px 5px;
   
-  span.from, span.to { 
-    color: $history-dates-color; 
-  }
+  span.from, span.to { color: $history-dates-color; }
 }
 
 div.messages {
-  .newday {
-    margin: 8px 30px 2px; 
-    padding: 1px 10px; 
-    background: $message-historycolor; 
-  }
-  .singleMessage { 
-    margin: 1px 10px; 
-    padding: 0 10px; 
-    background: $message-bgcolor; 
-  }
-  .singleMessage.me { 
-    background: $message-self-bgcolor; 
-  }
+  .newday { margin: 8px 30px 2px; padding: 1px 10px; background: $message-history-bgcolor; }
+  .singleMessage { margin: 1px 10px; padding: 0 10px; background: $message-bgcolor; }
+  .singleMessage.me { background: $message-self-bgcolor; }
 
   p { display: inline; }
   
   span.name { 
-    font: { 
-      weight: bold; 
-    }
+    font: { weight: bold; }
     color: $message-namecolor; 
   }
   span.time { 
-    font: { 
-      size: xx-small; 
-    }
-    color: $message-timecolor; 
+    font: { size: xx-small; }
+    color: $message-time-color; 
   }
   span.message {}
 }
