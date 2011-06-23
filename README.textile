@@ -37,16 +37,18 @@ h3. Features "in the pipeline"
 
 h5. Short term:
 
-* UI and Resources for... groups and rooms
-* Create an invite resource once groups are in.
+* UI and Resources for... groups and rooms. Includes add user to group functionality.
+* Lock down groups.
 * Links in message content should actually be hyperlinked.
 * Create MotD tab and alteration resource
-* Adding a guest account for instant login.
 
 h5. Mid term:
 
-* Add attachments to rooms. Will be in the form of a message and hyperlink. Ideally would use Riak to store, but may not be possible.
+* Add file and code attachments to rooms. Attachments will show up in the form of a hyperlink.
+** Files will be stored in the form of BLOBs in the database.
+** Code attachments will be stored in a special table, and will be highlighted appropriately when shown (in an Ext Window).
 * When getting history, all messages should be linked so that they can pop up a window that will show 'surrounding' history.
+* When tab/window is not focused, should blink tab once on new data.
 * Move all authentication to real ExtJS components.
 
 h5. Long term:
@@ -55,16 +57,17 @@ h5. Long term:
 
 h5. Want a feature faster?
 
-Fork me! I take pull requests on quality code. Do feel free to shoot me a message first, if you're if it's a feature I'll accept.
+Fork me! I take pull requests on quality code. Do feel free to shoot me a message first, if you're wondering if it's a feature I'll accept.
 
 h3. Technologies used
 
 Being the person I am, I built on top of other great technologies. Such as...
 
-* Ruby on Rails (including such gems as: haml, sass, coffeescript, devise, redcloth and more...)
-* ExtJS4 (an amazing rich UI framework produced by Sencha)
+* Ruby on Rails and surrounding ecosystem of gems: haml, sass, coffeescript, devise, uglifier, thin...
+* ExtJS4. An amazingly powerful RIA UI framework produced by Sencha.
+* SQLite. An excellent flat file based database.
 
-I presently use SQLite for my production database, but I have not strayed from active record. So you should be able to put any database you like behind it, assuming you have knowledge of how Ruby on Rails works.
+While I currently have SQLite behind the application, I have not (and will not) stray from active record. So you should be able to put any database you like behind it, assuming you have knowledge of how Ruby on Rails works.
 
 h3. License
 

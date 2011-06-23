@@ -1,15 +1,47 @@
 
-#history { padding: 0px 30px 5px; }
-#history span.from { color: #888888; }
-#history span.to { color: #888888; }
+$message-namecolor: #000088;
+$message-timecolor: #666666;
+$message-bgcolor: #fcfcfc;
+$message-self-bgcolor: #f3f3f3;
+$message-historycolor: #e5e5ff;
+$history-dates-color: #888888;
 
-div.messages .newday {margin: 8px 30px 2px; padding: 1px 10px; background: #e5e5ff; }
-div.messages .singleMessage { margin: 1px 10px; padding: 0 10px; background: #fcfcfc; }
-div.messages .singleMessage.me { background: #f3f3f3; }
+#history  {
+  padding: 0px 30px 5px;
+  
+  span.from, span.to { 
+    color: $history-dates-color; 
+  }
+}
 
-div.messages p {display: inline;}
-div.messages span.name { font-weight: bold; color: #000088; }
-div.messages span.time { font-size: xx-small; color: #666666; }
-div.messages span.message {}
+div.messages {
+  .newday {
+    margin: 8px 30px 2px; 
+    padding: 1px 10px; 
+    background: $message-historycolor; 
+  }
+  .singleMessage { 
+    margin: 1px 10px; 
+    padding: 0 10px; 
+    background: $message-bgcolor; 
+  }
+  .singleMessage.me { 
+    background: $message-self-bgcolor; 
+  }
 
-.commentadd { background-image: url(/assets/16x16/comment_add.png); }
+  p { display: inline; }
+  
+  span.name { 
+    font: { 
+      weight: bold; 
+    }
+    color: $message-namecolor; 
+  }
+  span.time { 
+    font: { 
+      size: xx-small; 
+    }
+    color: $message-timecolor; 
+  }
+  span.message {}
+}
