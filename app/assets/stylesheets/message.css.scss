@@ -1,13 +1,21 @@
 
 // Variables that stand alone:
-$message-namecolor: rgb(0, 0, 50%);
-$message-time-color: rgb(40%, 40%, 40%);
-$message-bgcolor: rgb(249, 249, 249);
-$message-history-bgcolor: rgb(230, 230, 255);
+// ---------------------------
+
+$message-namecolor       : rgb(0, 0, 50%);
+$message-time-color      : rgb(40%, 40%, 40%);
+$message-bgcolor         : rgb(249, 249, 249);
+$message-history-bgcolor : rgb(230, 230, 255);
 
 // Variables that use other variable references:
-$message-self-bgcolor: darken($message-bgcolor, 5%);
-$history-dates-color: lighten($message-time-color, 10%);
+// ---------------------------------------------
+
+$message-self-bgcolor  : darken($message-bgcolor, 5%);
+$history-dates-color   : lighten($message-time-color, 10%);
+
+
+// Actual class logic:
+// -------------------
 
 #history  {
   padding: 0px 30px 5px;

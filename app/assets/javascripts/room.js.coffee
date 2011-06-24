@@ -3,6 +3,7 @@ class RoomController
     @roomlist = {} # Each entry should be a hash of { id: name }
     @chatpad = 'chatpad'
     @historyUri = window.link.history
+    @url_regex = /\b(https?|ftp|file)(:\/\/)([-A-Za-z0-9+&@#\/%?=~_|!:,.;]*[-A-Za-z0-9+&@#\/%=~_|])/g
     
   getRoomEl: (room) -> Ext.ComponentQuery.query('panel[room='+room+'] > chatpanel')[0]
   getTabEl: (room) -> Ext.ComponentQuery.query('panel[room='+room+']')[0]
@@ -11,9 +12,11 @@ class RoomController
   getRoomIDs: ->
     ids = for id, tabId of @roomlist
       id    
+  processMessage: (msg) ->
+    msg.replace(@url_regex,'<a href="$1$2$3" target="_blank">$1$2$3</a>')
   displayMessages: (room, html) ->
     el = this.getRoomEl(room)
-    el.body.insertHtml "beforeEnd", html
+    el.body.insertHtml "beforeEnd", this.processMessage(html)
     el.body.scroll 'b', 100000, false
     if ""+room != ""+this.getActiveRoom()
       roomEl = this.getTabEl(room)
