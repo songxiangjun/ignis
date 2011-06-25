@@ -1,18 +1,22 @@
 class RoomController < LoggedInController
 
-  # Need to refactor so that it also sends the group name and id back with it... AND takes permissions in to account!
+  # Lists only rooms that are accessible to the user.
   def index
-    rooms = Room.all
+    rooms = current_user.rooms
     render :json => { :rooms => rooms, :success => true }
   end
   
-  # this really, REALLY needs to check permissions. And soon. Real soon.
-  # You can only create a room in a group IF you have admin access to that group.
+  # room[name], room[description] and group must be sent in to use this create method.
+  # current_user must have admin access to the group in question.
   def create
-    new_room = Room.create params[:room]
-    target_group = Group.find params[:group]
-    target_group.rooms << newroom
-    return head 201
+    if Membership.where(:user_id => current_user.id, :group_id => params[:group], :is_admin => true).exists?
+      new_room = Room.create params[:room]
+      target_group = Group.find params[:group]
+      target_group.rooms << newroom
+      return head 201
+    else
+      return head 401
+    end
   end
   
 end

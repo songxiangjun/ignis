@@ -22,6 +22,7 @@ class User < ActiveRecord::Base
   has_many :regular_memberships, :class_name => "Membership",      :conditions => { :is_admin => false }
   has_many :admin_access_groups, :through => :admin_memberships,   :source => :group
   has_many :accessible_groups,   :through => :regular_memberships, :source => :group
+  has_many :rooms,               :through => :accessible_groups #,  :source => :group
 
   # Used on a base model of User in order to find the last five minutes of users that have been seen.
   def self.recent
