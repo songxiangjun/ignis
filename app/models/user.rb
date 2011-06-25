@@ -34,5 +34,8 @@ class User < ActiveRecord::Base
   def seen
     update_attribute :seen_at, Time.now
   end
+  
+  def has_admin_of_group_id
+  end
 
 end
