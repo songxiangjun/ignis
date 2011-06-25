@@ -2,26 +2,35 @@ roomBox =
   xtype     : 'roomcombobox'
   id        : 'pickroom'
   width     : 250
-  emptyText : 'Select a room to join'
+  emptyText : 'Jump to a room..'
   listeners :
     focus     : (field, options) -> Ext.data.StoreManager.lookup('rooms').load()
     select    : (field, value, options) ->
       room = Ext.data.StoreManager.lookup('rooms').getById(field.getValue()).data
-      if window.rc.roomExist room.id
-        window.rc.setActiveRoom room.id
-      else
-        window.rc.joinRoom room.id, room.name, true
+      window.rc.joinRoom room.id, room.name
 
+listGroups = -> Ext.widget 'grouplistwindow'
+addGroup = -> Ext.widget 'groupaddwindow'
+groupMenu =
+	items: [
+    { text: 'Add User to Group',  icon: '/assets/16x16/user_add.png', disabled: true }
+    '-'
+		{ text: 'List Groups',    icon: '/assets/16x16/process.png', handler: listGroups }
+		{ text: 'Create Group',   icon: '/assets/16x16/process.png', handler: addGroup } 
+	]
+listRooms = -> Ext.widget 'roomlistwindow'
+roomMenu =
+	items: [
+	  { text: 'List Rooms',       icon: '/assets/16x16/process.png', handler: listRooms}
+		{ text: 'Create new Room',  icon: '/assets/16x16/process.png', disabled: true } 
+	]
 setupButton = 
-  text     : 'Setup'
-  disabled : true
+  text     : 'System'
   icon     : '/assets/16x16/database.png'
   menu     :
     items    : [
-      { text: 'Add User to Group',  icon: '/assets/16x16/user_add.png' }
-      '-'
-      { text: 'Group Setup',           icon: '/assets/16x16/process.png'  } # Will have create, update and delete functionality
-      { text: 'Room Setup',            icon: '/assets/16x16/process.png'  } # Will have create, update and delete functionality, restricted by group
+      { text: 'Groups', menu: groupMenu }
+      { text: 'Rooms',  menu: roomMenu }
     ]
   
 historyButton =

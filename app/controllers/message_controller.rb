@@ -1,5 +1,4 @@
-class MessageController < ApplicationController
-  before_filter :authenticate_user!
+class MessageController < LoggedInController
 
   # MUST add validation to this very soon.
   def create

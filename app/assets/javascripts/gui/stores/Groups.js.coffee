@@ -1,12 +1,13 @@
-Ext.define 'ignis.model.Groups'
+Ext.define 'ignis.model.Groups', 
   extend : 'Ext.data.Model'
-  fields : [ 'name', 'id' ]
+  fields : [
+    { name: 'name', type: 'string' }
+    { name: 'id',   type: 'int' } 
+  ]
 
 Ext.define 'ignis.store.Groups',
   extend   : 'Ext.data.Store'
   model    : 'ignis.model.Groups'
-  storeId  : 'groups'
-  autoLoad : true
   proxy    :
     type     : 'ajax'
     url      : window.link.groups
@@ -15,4 +16,4 @@ Ext.define 'ignis.store.Groups',
       root            : 'groups'
       successProperty : 'success'
 
-Ext.create 'ignis.store.Groups'
+Ext.create 'ignis.store.Groups', { storeId  : 'groups' }

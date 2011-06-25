@@ -1,9 +1,12 @@
+# This class is only used by the User class, and shouldn't need to be broken out unless it gets
+# much bigger than an intermediary many-to-many join class.
 class Membership < ActiveRecord::Base
   belongs_to :group
   belongs_to :user
 end
 
-# Users are central to the application. They have messages and groups (and memberships, which tells about their admin level on a group)
+# Users are where all the fun happens. From a user you can find the groups that they belong to,
+# and from there you can find the rooms that they have access to.
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable

@@ -32,7 +32,7 @@ class RoomController
       title    : name
       layout   : 'border'
       room     : id
-      closable : closable
+      closable : true
       items    : [ 
         { region: 'center', xtype: 'chatpanel' }
         { region: 'south',  xtype: 'chat.inputpanel', items: [ 
@@ -46,13 +46,16 @@ class RoomController
     else
       false
     
-  joinRoom: (id, name, closable) ->
-    pad = Ext.getCmp @chatpad
-    tab = this.createTab id, name, closable
-    pad.add tab
-    pad.setActiveTab tab
-    this.getRoomHistory id
-    @roomlist[id] = name
+  joinRoom: (id, name) ->
+    if this.roomExist id
+      this.setActiveRoom id
+    else
+      pad = Ext.getCmp @chatpad
+      tab = this.createTab id, name
+      pad.add tab
+      pad.setActiveTab tab
+      this.getRoomHistory id
+      @roomlist[id] = name
     
   getRoomHistory: (room) ->
     Ext.Ajax.request 

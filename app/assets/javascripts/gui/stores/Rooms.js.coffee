@@ -1,4 +1,4 @@
-Ext.define 'ignis.model.Rooms'
+Ext.define 'ignis.model.Rooms',
   extend : 'Ext.data.Model'
   fields : [ 'name', 'description', 'id' ]
 
