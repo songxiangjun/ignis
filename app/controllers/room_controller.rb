@@ -2,8 +2,8 @@ class RoomController < LoggedInController
 
   # Lists only rooms that are accessible to the user.
   def index
-    rooms = current_user.rooms
-    render :json => { :rooms => rooms, :success => true }
+    rooms = current_user.rooms.includes(:group)
+    render :json => { :rooms => rooms, :success => true }, :include => :group
   end
   
   # room[name], room[description] and group must be sent in to use this create method.

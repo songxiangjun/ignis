@@ -1,6 +1,6 @@
 Ext.define 'ignis.model.Rooms',
   extend : 'Ext.data.Model'
-  fields : [ 'name', 'description', 'id' ]
+  fields : [ 'name', 'description', 'id', {name: 'group_name', mapping: 'group.name'} ]
 
 Ext.define 'ignis.store.Rooms',
   extend   : 'Ext.data.Store'

@@ -12,5 +12,7 @@ Ext.define "ignis.view.RoomComboBox",
   listConfig     :
     loadingText    : 'Finding rooms...'
     getInnerTpl    : ->
-      '<span style="font-weight: bold;">{name}</span><br /><span style="font-size: xx-small;">{description}</span>'
+      '({group_name}) 
+      <span style="font-weight: bold;">{name}</span><br />
+      <span style="font-size: xx-small;">{description}</span>'
     

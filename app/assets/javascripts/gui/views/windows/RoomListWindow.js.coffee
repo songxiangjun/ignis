@@ -33,8 +33,9 @@ Ext.define 'ignis.view.RoomListWindow'
       emptyText      : 'No rooms that you have access to were found.'
       deferEmptyText : false
     columns      : [
-      { header: 'Room Name',   dataIndex: 'name' }
-      { header: 'Description', dataIndex: 'description', flex: 1 }
+      { header: 'Room Name',        dataIndex: 'name' }
+      { header: 'Group Membership', dataIndex: 'group_name' }
+      { header: 'Description',      dataIndex: 'description', flex: 1 }
     ]
     listeners    :
       add          : (that, opts) -> that.getStore().load()

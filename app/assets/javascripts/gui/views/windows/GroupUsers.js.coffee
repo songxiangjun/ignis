@@ -1,15 +1,24 @@
 submitAdd = (b) ->
   values = b.up('form').getValues()
+  if values.group is undefined
+    Ext.Msg.alert 'Submission Invalid', 'Please supply a group to update the memberhip of!'
+  else
+    Ext.Ajax.request 
+      scope    : this
+      url      : window.link.groups + '/' + values.group + '/associate'
+      success  : (response) -> Ext.Msg.alert('Status', 'Success!')
+      params   : values
+
+loadSelectedUsers = (field) ->
+  field.up('form').down('userselections').setRawValue []
+  formValues = field.up('form').getValues()
   Ext.Ajax.request 
     scope    : this
-    url      : window.link.groups + '/' + values.group + '/associate'
-    success  : (response) -> b.up('window').close()
-    params   : values
-
-loadSelectUsers = (field) ->
-  selector = field.up('window').down('userselections')
-  # Make a request to the server to get the associated peeps, and then set them on the selector
-  selector.setRawValue myValues
+    method   : 'get'
+    url      : window.link.groups + '/' + formValues.group + '/associate'
+    success  : (response) -> 
+      json = Ext.JSON.decode(response.responseText)
+      field.up('form').down('userselections').setRawValue json.users
   
 Ext.define 'ignis.view.GroupUsersWindow',
   extend   : 'Ext.window.Window'
@@ -29,9 +38,9 @@ Ext.define 'ignis.view.GroupUsersWindow',
       anchor      : '100%'
       allowBlank  : false
     items       : [
-      { fieldLabel : 'Group', name: 'group', xtype: 'groupcombobox'  }
+      { fieldLabel : 'Group', name: 'group', xtype: 'groupcombobox', listeners: { select: loadSelectedUsers }  }
       { fieldLabel : 'Users', name: 'users', xtype: 'userselections' }
     ]
     buttons     : [ 
-      { text: 'Add User to Group', handler: submitAdd } 
+      { text: 'Save Group Membership', handler: submitAdd } 
     ]
