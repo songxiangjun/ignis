@@ -4,5 +4,8 @@
 //= require libs/swallow
 //= require libs/highlight.pack
 //= require libs/ext-all
+//= require_tree ./libs/layout
+//= require libs/MultiSelect
+//= require libs/ItemSelector
 //= require_tree .
 

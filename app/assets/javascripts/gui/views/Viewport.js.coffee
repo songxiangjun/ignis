@@ -10,12 +10,12 @@ roomBox =
       room = Ext.data.StoreManager.lookup('rooms').getById(field.getValue()).data
       window.rc.joinRoom room.id, room.name
 
-addUserToGroup = -> Ext.widget 'groupinvitewindow'
+addUserToGroup = -> Ext.widget 'groupuserswindow'
 listGroups = -> Ext.widget 'grouplistwindow'
 addGroup = -> Ext.widget 'groupaddwindow'
 groupMenu =
 	items: [
-    { text: 'Add User to Group',  icon: '/assets/16x16/user_add.png', handler: addUserToGroup }
+    { text: 'Select User for Group',  icon: '/assets/16x16/user_add.png', handler: addUserToGroup }
     '-'
 		{ text: 'List Groups',    icon: '/assets/16x16/process.png', handler: listGroups }
 		{ text: 'Create Group',   icon: '/assets/16x16/process.png', handler: addGroup } 

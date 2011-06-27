@@ -6,10 +6,27 @@ class GroupController < LoggedInController
     render :json => { :groups => groups, :success => true }
   end
   
-  def associate
-    user = User.find params[:user]
+  def associated_users
+    users = Group.find(params[:group_id]).users.select('users.username, users.id')
+    render :json => { :users => users, :success => true }
+  end
+  
+  def associate_users
     group = Group.find params[:group_id]
-    user.accessible_groups << group
+    userlist = params[:users]
+    
+    # Do the removal first.
+    group.users.each do |user|
+      if userlist.include? user.id
+        userlist.delete user.id
+      else
+        user.accessible_groups.delete group
+      end
+    end
+
+    # Now add the users that are left.
+    User.find(userlist).each { |user| user.accessible_groups << group }
+    
     return head 201
   end
   

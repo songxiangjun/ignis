@@ -5,3 +5,10 @@
  *= require_self
  *= require_tree . 
 */
+
+.x-form-itemselector-add { background: url(/assets/extux/right2.gif); }
+.x-form-itemselector-remove { background: url(/assets/extux/left2.gif); }
+.x-form-itemselector-up { background: url(/assets/extux/up2.gif); }
+.x-form-itemselector-down { background: url(/assets/extux/down2.gif); }
+.x-form-itemselector-top { background: url(/assets/extux/top2.gif); }
+.x-form-itemselector-bottom { background: url(/assets/extux/bottom2.gif); }

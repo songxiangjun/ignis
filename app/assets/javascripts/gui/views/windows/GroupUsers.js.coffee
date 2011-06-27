@@ -6,17 +6,22 @@ submitAdd = (b) ->
     success  : (response) -> b.up('window').close()
     params   : values
 
-Ext.define 'ignis.view.GroupInviteUserWindow',
+loadSelectUsers = (field) ->
+  selector = field.up('window').down('userselections')
+  # Make a request to the server to get the associated peeps, and then set them on the selector
+  selector.setRawValue myValues
+  
+Ext.define 'ignis.view.GroupUsersWindow',
   extend   : 'Ext.window.Window'
-  alias    : 'widget.groupinvitewindow'
-  title    : 'Add User to Group'
+  alias    : 'widget.groupuserswindow'
+  title    : 'Select Users for Group'
   layout   : 'fit'
-  width    : 400
+  width    : 700
   modal    : true
   autoShow : true
   items    :
     xtype       : 'form'
-    url         : window.link.groupinvite
+    url         : window.link.groupadmin
     defaultType : 'textfield'
     frame       : true
     padding     : 5
@@ -24,8 +29,8 @@ Ext.define 'ignis.view.GroupInviteUserWindow',
       anchor      : '100%'
       allowBlank  : false
     items       : [
-      { fieldLabel : 'Group', name: 'group', xtype: 'groupcombobox' }
-      { fieldLabel : 'User',  name: 'user',  xtype: 'usercombobox'  }
+      { fieldLabel : 'Group', name: 'group', xtype: 'groupcombobox'  }
+      { fieldLabel : 'Users', name: 'users', xtype: 'userselections' }
     ]
     buttons     : [ 
       { text: 'Add User to Group', handler: submitAdd } 

@@ -4,7 +4,8 @@ Ignis::Application.routes.draw do
   resources :message,    :only => [:create, :destroy]
   resources :room,       :only => [:index, :create, :update, :destroy]
   resources :group,      :only => [:index, :create, :update, :destroy] do
-    post 'associate' => 'group#associate'
+    get 'associate' => 'group#associated_users'
+    post 'associate' => 'group#associate_users'
   end
   resources :membership, :only => [:index, :create, :update, :destroy]
 
