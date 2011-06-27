@@ -18,11 +18,12 @@ joinButton =
 Ext.define 'ignis.view.RoomListWindow'
   extend   : 'Ext.window.Window'
   alias    : 'widget.roomlistwindow'
-  title    : 'Administer Rooms'
+  title    : 'Chat Rooms'
   layout   : 'fit'
   width    : 600
   height   : 300
   autoShow : true
+  bbar     : ['Note: You must have admin rights to the group a room belongs to in order to perform admin functions.']
   items    :
     xtype        : 'gridpanel'
     border       : false

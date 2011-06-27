@@ -39,7 +39,7 @@ Ext.define 'ignis.view.GroupUsersWindow',
       allowBlank  : false
     items       : [
       { fieldLabel : 'Group', name: 'group', xtype: 'groupcombobox', listeners: { select: loadSelectedUsers }  }
-      { fieldLabel : 'Users', name: 'users', xtype: 'userselections' }
+      { fieldLabel : 'Users', name: 'users', xtype: 'userselections', height: 203 }
     ]
     buttons     : [ 
       { text: 'Save Group Membership', handler: submitAdd } 

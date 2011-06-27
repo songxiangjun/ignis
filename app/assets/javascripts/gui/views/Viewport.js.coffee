@@ -14,27 +14,25 @@ addUserToGroup = -> Ext.widget 'groupuserswindow'
 listGroups = -> Ext.widget 'grouplistwindow'
 addGroup = -> Ext.widget 'groupaddwindow'
 groupMenu =
-	items: [
-    { text: 'Select User for Group',  icon: '/assets/16x16/user_add.png', handler: addUserToGroup }
-    '-'
-		{ text: 'List Groups',    icon: '/assets/16x16/process.png', handler: listGroups }
-		{ text: 'Create Group',   icon: '/assets/16x16/process.png', handler: addGroup } 
-	]
+  text : 'Groups...'
+  icon : '/assets/16x16/database.png'
+  menu :
+  	items: [
+      { text: 'Select User for Group',  icon: '/assets/16x16/user_add.png', handler: addUserToGroup }
+      '-'
+  		{ text: 'List Groups',    icon: '/assets/16x16/process.png', handler: listGroups }
+  		{ text: 'Create Group',   icon: '/assets/16x16/process.png', handler: addGroup } 
+  	]
 listRooms = -> Ext.widget 'roomlistwindow'
 addRoom = -> Ext.widget 'roomaddwindow'
 roomMenu =
-	items: [
-	  { text: 'List Rooms',       icon: '/assets/16x16/process.png', handler: listRooms}
-		{ text: 'Create new Room',  icon: '/assets/16x16/process.png', handler: addRoom } 
-	]
-setupButton = 
-  text     : 'System'
-  icon     : '/assets/16x16/database.png'
-  menu     :
-    items    : [
-      { text: 'Groups', menu: groupMenu }
-      { text: 'Rooms',  menu: roomMenu }
-    ]
+  text : 'Rooms...'
+  icon : '/assets/16x16/database.png'
+  menu : 
+  	items: [
+  	  { text: 'List Rooms',       icon: '/assets/16x16/process.png', handler: listRooms}
+  		{ text: 'Create new Room',  icon: '/assets/16x16/process.png', handler: addRoom } 
+  	]
   
 historyButton =
   text    : 'History'
@@ -64,7 +62,7 @@ Ext.define 'ignis.view.Viewport'
   items  :
     xtype  : 'panel'
     layout : 'fit'
-    tbar   : [ roomBox, '-', historyButton, '-', setupButton, '->', profileButton, logoutButton ]
+    tbar   : [ roomBox, '-', historyButton, '-', roomMenu, groupMenu, '->', profileButton, logoutButton ]
     bbar   : [ 'Users recently active: ', { xtype: 'tbtext', text: '', id: 'activeusers' } ]
     items  :
       xtype       : 'tabpanel'
