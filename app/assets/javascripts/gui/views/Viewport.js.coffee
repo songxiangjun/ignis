@@ -5,6 +5,7 @@ roomBox =
   emptyText : 'Jump to a room..'
   listeners :
     focus     : (field, options) -> Ext.data.StoreManager.lookup('rooms').load()
+    blur      : (field) -> field.clearValue()
     select    : (field, value, options) ->
       room = Ext.data.StoreManager.lookup('rooms').getById(field.getValue()).data
       window.rc.joinRoom room.id, room.name
