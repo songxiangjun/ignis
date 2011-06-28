@@ -7,27 +7,13 @@ class GroupController < LoggedInController
   end
   
   def associated_users
-    user_ids = Array.new
-    Group.find(params[:group_id]).users.select('users.id').each { |u| user_ids.push u.id }
+    user_ids = Group.associated_users_array params[:group_id]
     
-    render :json => { :users => user_ids.uniq, :success => true }
+    render :json => { :users => user_ids, :success => true }
   end
   
   def associate_users
-    group = Group.find params[:group_id]
-    userlist = params[:users]
-    
-    # Do the removal first.
-    group.users.each do |user|
-      if userlist.include? user.id.to_s
-        userlist.delete user.id.to_s
-      else
-        user.accessible_groups.delete group
-      end
-    end
-
-    # Now add the users that are left.
-    User.where(:id => userlist) { |user| user.accessible_groups << group }
+    Group.set_accessible_users params[:group_id], params[:users]
     
     return head 201
   end
