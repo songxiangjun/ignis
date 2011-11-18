@@ -26,3 +26,7 @@ group :test do
   # Pretty printed test output
   gem 'turn', :require => false
 end
+
+group :production do
+  gem 'therubyracer'
+end
